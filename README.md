@@ -139,17 +139,17 @@ Em construção
 </div>
 <br>
 
-## :pencil2: Modelagem Entidade-Relacionamento - MER 
+//## :pencil2: Modelagem Entidade-Relacionamento - MER 
 <div class="mer" style= "text-align:justify">
 
 - **Modelo Conceitual**
   
-   ![MER_ModeloConceitual](./resource/images/ "MER_Conceitual_ConsultCAR")
+   ![MER_ModeloConceitual](./resource/images/MER.jpg "MER_Conceitual_ScrumCloud")
 <br><br>
 
 - **Modelo Lógico**
   
-   ![MER_ModeloLogico](./resource/images/ "MER_Lógico_ConsultCAR")
+   ![MER_ModeloLogico](./resource/images/")
 <br><br>
 </div>
 
