@@ -144,7 +144,7 @@ Em construção
 
 - **Modelo Conceitual**
   
-   ![MER_ModeloConceitual](./resource/images/MER.jpg "MER_Conceitual_ScrumCloud")
+   ![MER_ModeloConceitual](./resource/images/MER.jpeg "MER_Conceitual_ScrumCloud")
 <br><br>
 
 - **Modelo Lógico**
