@@ -1,6 +1,6 @@
 ﻿<div style = "text-align:center">
 
-# Seja bem vindo ao ScrumCloud !   <img src="/resource/images/logo-scrumcloud.png">
+# Seja bem vindo ao ScrumCloud !   <img src="/resource/images/logo-scrumcloud.png" align="center">
 
 </div>
 <div style="text-align:center">
