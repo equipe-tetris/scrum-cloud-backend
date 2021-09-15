@@ -49,6 +49,11 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.16</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -64,6 +69,36 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<changeLogFile>src/main/resources/db-scripts/db.changelog.xml</changeLogFile>
+					<driver>com.mysql.jdbc.Driver</driver>
+				</configuration>
+				<executions>
+					<execution>
+						<id>liquibase-install</id>
+						<phase>install</phase>
+						<goals>
+							<goal>update</goal>
+						</goals>
+						<configuration>
+							<url>jdbc:mysql://localhost:3306;user=scrumcloud;password=scrumcloud</url>
+							<username>scrumcloud</username>
+							<password>scrumcloud</password>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>8.0.16</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
