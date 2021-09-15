@@ -1,6 +1,6 @@
 ﻿<div style = "text-align:center">
 
-# Seja bem vindo ao ScrumCloud !   <img src="/resource/images/logo-scrumcloud.png" align="center">
+# Seja bem vindo ao ScrumCloud !   <img src="/resource/images/logo-scrumcloud.png">
 
 </div>
 <div style="text-align:center">
@@ -29,7 +29,7 @@ A equipe Tetris é composta pelos seguintes estudantes do 3º semestre de Banco 
 </div>
 <br>
 
-#  Scrum Cloud !<img src="/resource/images/icon-scrumcloud.png>
+#  Scrum Cloud !<img src="/resource/images/icon-scrumcloud.png">
 ## :dart: Objetivo  
 Em construção
 </div>
