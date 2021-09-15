@@ -125,7 +125,7 @@ Em construção
 ## :page_with_curl: Product Backlog  
 <div class="users-stories" style= "text-align:justify">
 
-- ![Product Backlog](./resource/images/ "Backlog - Necessidades do Cliente")
+- ![Product Backlog](./resource/images/backlog.jpg "Backlog - Necessidades do Cliente")
 <br>  
 </div>
 <br>
@@ -156,32 +156,36 @@ Em construção
 ## :mortar_board: Wireframes 
 <div class="wireframes" style= "text-align:justify">
 
-- **01: Tela Inicial** *- atual*
-  - ![Tela_Inicial](./resource/images/telas/aplicacao/Wireframe_telaPrincipal.jpeg "Tela Inicial Protótipo ConsultCAR")
+- **01: Tela Login** *- Sujeita a modificações*
+  - ![Tela_Inicial](./resource/images/wireframes/tela-login.png "Tela de login do ScrumCloud ")
 <br><br>
 
-  - *Tela Inicial Prevista - Sujeita a modificações* 
-  - ![Tela_Inicial](./resource/images/frame_consultcar.png "Tela do Software ConsultCar")
+  - **02: Tela cadastro do Time**
+  - ![DirCompact](./resource/images/wireframes/tela-cadastro-time-sm.png "Cadastro Time")
 <br><br>
 
-- **02: Diretorio de entrada com arquivos ainda compactados**
-  - ![DirCompact](./resource/images/telas/aplicacao/Wireframe_telaDirEntrada.arqComp.jpeg "Diretório com arquivos ainda compactados ConsultCAR")
+- **03: Tela cadastro usuário**
+  - ![ConexaoBD](./resource/images/wireframes/tela-cadastro-usuario.png "Tela de cadastro dos usuarios")
 <br><br>
 
-- **03: Conexão com o Banco de Dados**
-  - ![ConexaoBD](./resource/images/telas/aplicacao/Wireframe_telaConexaoBemSucedida.jpeg "Tela de confirmação de conexão com banco de dados ConsultCAR")
+- **04: Tela Inicial**
+  - ![Tela_LogSistema](./resource/images/wireframes/tela-inicial-sm.png "Tela Inicial")
 <br><br>
 
-- **04: Log informando as atividades do Sistema**
-  - ![Tela_LogSistema](./resource/images/telas/aplicacao/Wireframe_telaLog.jpeg "Tela de logs das atividades do Sistema ConsultCAR")
+- **05: Tela retrospectiva DEV**
+  - ![DirCompact](./resource/images/wireframes/tela-retrospectiva-dev.png "Tela Retrospectiva DEV")
 <br><br>
 
-- **05: Diretorio de saída com arquivos descompactados**
-  - ![DirCompact](./resource/images/telas/aplicacao/Wireframe_telaDirSaida.arqDescomp.jpeg "Diretório com arquivos descompactados ConsultCAR")
+- **06: Tela retrospectiva SM**
+  - ![DiretoriosLogs](./resource/images/wireframes/tela-retrospectiva-sm.png "Tela Restrospectiva SM")
 <br><br>
 
-- **06: Arquivos gerados**
-  - ![DiretoriosLogs](./resource/images/telas/aplicacao/Wireframe_telaArqLogGerados.jpeg "Diretório de arquivos gerados ConsultCAR")
+- **07: Tela Sala Planning Poker DEV**
+  - ![DiretoriosLogs](./resource/images/wireframes/tela-sala-planning-poker-dev.png "Tela Sala Planning Poker DEV")
+<br><br>
+
+- **08: Tela Sala Planning Poker SM**
+  - ![DiretoriosLogs](./resource/images/wireframes/tela-sala-planning-poker-sm.png "Tela Sala Planning Poker SM")
 <br><br>
 
 ### :newspaper: **Banco de Dados** 
