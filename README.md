@@ -29,8 +29,7 @@ A equipe Tetris é composta pelos seguintes estudantes do 3º semestre de Banco 
 </div>
 <br>
 
-#  Scrum Cloud ![LogoProjeto](/resource/images/Scrum_Cloud_logo.jpg "LogoProjeto")
-
+#  Scrum Cloud !<img src="/resource/images/Scrum_Cloud_logo.jpg" width="78" height="80">
 ## :dart: Objetivo  
 Em construção
 </div>
