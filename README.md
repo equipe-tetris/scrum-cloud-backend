@@ -1,6 +1,6 @@
 ﻿<div style = "text-align:center">
 
-# Seja bem vindo ao ScrumCloud !   <img src="/resource/images/Scrum_Cloud_logo.jpg" width="78" height="80">
+# Seja bem vindo ao ScrumCloud !   <img src="/resource/images/logo-scrumcloud.png">
 
 </div>
 <div style="text-align:center">
@@ -29,27 +29,67 @@ A equipe Tetris é composta pelos seguintes estudantes do 3º semestre de Banco 
 </div>
 <br>
 
-#  Scrum Cloud !<img src="/resource/images/Scrum_Cloud_logo.jpg" width="78" height="80">
+#  Scrum Cloud !<img src="/resource/images/icon-scrumcloud.png">
 ## :dart: Objetivo  
-Em construção
+Desenvolver um sistema que permita que equipes remotas realizem algumas cerimônias do SCRUM.
+As cerimônias para este projeto serão:
+• Planning;
+• Retrospective;
+Este sistema pode permitir que pessoas cadastradas utilizem o sistema, montando equipes e armazenando os dados históricos referente às estimativas do Planning e das cerimônias de Retrospective.
 </div>
 <br>
 
 ## :pencil: Requisitos funcionais 
+• Cadastros de Usuários contendo (Nome, e-mail e senha)
+• Existem dois perfis de usuário:
+	o Scrum Master
+	o Desenvolvedor
+• Por padrão, todos que se cadastram serão Scrum Masters
+• O Scrum Master após se cadastrar poderá criar seu time no sistema.
+• Ele poderá incluir um ou mais integrante em seu time
+• Ao inserir um integrante ele irá inserir o nome e o e-mail deste integrante
+• Após preencher os integrantes e salvar o time o sistema deverá disparar um e-mail para os integrantes realizarem o cadastro na plataforma.
+• Os usuários que forem cadastrados através do link que foi enviado por e-mail possuirão perfil de Dev naquele time em que ele foi convidado.
+• O Scrum Master poderá convidar uma pessoa para seu time copiando diretamente o link do time e enviando da maneira como preferir.
+• O cadastro através do Link deverá possuir as mesmas mecânicas do cadastro por e-mail.
+• O sistema deverá permitir a criação das salas de Planning e de Retrospective
+• Na sala de Planning, deverá ser permitido inserir um ou uma lista de itens que serão estimados.
+• Para a estimativa deverá ser utilizada técnicas como Planning Poker utilizando ou por tamanhos relativos
+• Para o Planning Poker pode ser utilizada a frequência de Fibonacci ou as cartas padrão
+• O sistema deverá trabalhar com um sistema de rodadas, ou seja, todos os itens inseridos na lista de estimativa serão estimados um por vez.
+• Neste sistema de rodadas, item atual deverá ficar em evidência na tela para que todos consigam ler.
+• Um sistema de chat em texto deverá ser implementado para comunicação na sala de estimativas.
+• Os participantes deverão escolher a carta para a estimativa e após selecioná-la um sistema de indicador deverá exibir quantas pessoas já escolheram as cartas e quantas faltam.
+• O Scrum Master terá acesso a uma funcionalidade onde ele poderá finalizar a votação, fazendo com que todas as cartas selecionadas sejam exibidas para todos os participantes.
+• O Scrum Master poderá então atribuir um valor para o item da rodada.
+• O Scrum Master poderá prosseguir para a próxima tarefa ou retornar a anterior.
+• As estimativas deverão ser salvas, permitindo que os usuários possam exportar as tarefas estimadas, bem como os valores atribuídos para os itens.
+• Na sala de retrospectiva, deverá ser permitido que cada participante da sala insira itens para serem avaliados.
+• Cada participante poderá inserir quantos itens quiser nas seguintes categorias: 1–Parar de Fazer 2–Diminuir a Frequência 3–Manter a Frequência 4–Aumentar a frequência 5-Começar a fazer;
+• Um sistema de chat de texto deverá ser implementado para a sala de Retrospective;
+• Os usuários poderão sinalizar que terminaram de preencher os itens;
+• Um indicador deverá ser exibido para todos os participantes da sala contendo a informação de quantos participantes finalizaram e quantos faltam.
+• O Scrum Master deverá ter acesso a um botão para iniciar a votação
+• As rodadas da votação serão feitas por categorias.
+• Durante a votação, deverão ser exibidos o nome da categoria para todos os participantes, bem como todos os itens inseridos pelos participantes naquela categoria em questão.
+• Durante a votação os participantes poderão selecionar quais itens eles acham pertinente e sinalizar que finalizaram.
+• O Scrum Master poderá mover a votação para a próxima categoria e para a categoria anterior.
+• Após todas as categorias serem votadas um resumo de todas as categorias será exibida.
+• Neste resumo, somente os 3 itens mais votados serão exibidos por categoria.
+• O Scrum Master então poderá finalizar a retrospectiva consolidando os itens mais votados.
+• Ao finalizar a retrospectiva o resumo poderá ser exportado.
 
-- Em construção
   
 <br>
 
 ## :heavy_check_mark: Funcionalidades 
 
-- Em construção 
+.Disponibilizar de forma rapida as cerimonias do Scrum, e poder exporta-las para consulta durante a realização do projeto. 
 <br>
 
 ## :dart: Público-alvo 
-
 <div class="publico-alvo" style= "text-align:justify">
-Em construção
+	.Times de desenvolvimento utilizando metodo agil do scrum para realização das cerimonias do scrum de forma rapida e organizada 
 </div>
 <br>
 
@@ -74,24 +114,49 @@ Em construção
 <div class="sprints" style= "text-align:justify">
 
 - **SPRINT 1** :heavy_check_mark:
-  
+   - Product Backlog
+   - Wireframes
+   - User stories
+   - Sprint planning
+   - Criação da base da aplicação - frontend 
+   - Criação da base da aplicação - backend
+   - MER
 
 <br><br>  
 
 - **SPRINT 2** :heavy_check_mark:
-  
+   - Permitir cadastro de Usuário
+   - Permitir cadastro de Times de Desenvolvimento 
+   - Disparar e-mails com links para cadastramento
+   - Permitir criar sala de reunião
+   - Permitir incluir itens para votação em reuniões de Planning
+   - Permitir definir métrica de votação
+   - Permitir encerramento da votação de um item
+   - Gerar sugestão de valor para o item em questão pós encerramento de votação dele para o S.M.
+   - Permitir definição de um valor ao item com votação encerrada
 
 
 <br><br>
 
 - **SPRINT 3** :heavy_check_mark:
-  
+   - Gerar link de reuniões marcadas para ser compartilhado
+   - Permitir definir Scrum Master da reunião
+   - Evidenciar na tela item em votação
+   - Permitir conversa entre participantes
+   - Permitir retornar ou avançar item da lista de votação
+   - Permitir visualização de votos após encerramento de votação do item
+   - Permitir incluir itens para votação em reuniões de Retrospective
+   - Permitir sinalização de termino de inserção de itens por usuário nas reuniões de Retrospective
 
 
 <br><br> 
 
 - **SPRINT 4** :heavy_check_mark:
-  
+   - Permitir exportar os item votados e seus valores
+   - Permitir sinalização de termino de itens da categoria em questão discutida.
+   - Permitir a sinalização de 0 ao número total de itens da categoria em questão discutida na reunião de Retrospective
+   - Gerar um resumo de todas as categorias votadas com ênfase nos três itens mais votados de cada categoria
+   - Permitir exportar resumo gerado ao final da reunião
 
 
 <br><br> 
@@ -100,7 +165,7 @@ Em construção
 ## :page_with_curl: Product Backlog  
 <div class="users-stories" style= "text-align:justify">
 
-- ![Product Backlog](./resource/images/ "Backlog - Necessidades do Cliente")
+- ![Product Backlog](./resource/images/backlog.jpg "Backlog - Necessidades do Cliente")
 <br>  
 </div>
 <br>
@@ -108,68 +173,65 @@ Em construção
 ## :chart_with_upwards_trend: Users Stories 
 <div class="users-stories" style= "text-align:justify">
 
-- ![user_stories](https://user-images.githubusercontent.com/81206214/120247320-766a2100-c249-11eb-8946-7060f9ae8fa8.jpg)
+- Em construção
 
 <br>  
 </div>
 <br>
 
-## :pencil2: Modelagem Entidade-Relacionamento - MER 
+//## :pencil2: Modelagem Entidade-Relacionamento - MER 
 <div class="mer" style= "text-align:justify">
 
 - **Modelo Conceitual**
   
-   ![MER_ModeloConceitual](./resource/images/ "MER_Conceitual_ConsultCAR")
+   ![MER_ModeloConceitual](./resource/images/MER.jpeg "MER_Conceitual_ScrumCloud")
 <br><br>
 
 - **Modelo Lógico**
   
-   ![MER_ModeloLogico](./resource/images/ "MER_Lógico_ConsultCAR")
+   ![Em Construção]
 <br><br>
 </div>
 
 ## :mortar_board: Wireframes 
 <div class="wireframes" style= "text-align:justify">
 
-- **01: Tela Inicial** *- atual*
-  - ![Tela_Inicial](./resource/images/telas/aplicacao/Wireframe_telaPrincipal.jpeg "Tela Inicial Protótipo ConsultCAR")
+- **01: Tela Login** *- Sujeita a modificações*
+  - ![Tela_Inicial](./resource/images/wireframes/tela-login.png "Tela de login do ScrumCloud ")
 <br><br>
 
-  - *Tela Inicial Prevista - Sujeita a modificações* 
-  - ![Tela_Inicial](./resource/images/frame_consultcar.png "Tela do Software ConsultCar")
+  - **02: Tela cadastro do Time**
+  - ![DirCompact](./resource/images/wireframes/tela-cadastro-time-sm.png "Cadastro Time")
 <br><br>
 
-- **02: Diretorio de entrada com arquivos ainda compactados**
-  - ![DirCompact](./resource/images/telas/aplicacao/Wireframe_telaDirEntrada.arqComp.jpeg "Diretório com arquivos ainda compactados ConsultCAR")
+- **03: Tela cadastro usuário**
+  - ![ConexaoBD](./resource/images/wireframes/tela-cadastro-usuario.png "Tela de cadastro dos usuarios")
 <br><br>
 
-- **03: Conexão com o Banco de Dados**
-  - ![ConexaoBD](./resource/images/telas/aplicacao/Wireframe_telaConexaoBemSucedida.jpeg "Tela de confirmação de conexão com banco de dados ConsultCAR")
+- **04: Tela Inicial**
+  - ![Tela_LogSistema](./resource/images/wireframes/tela-inicial-sm.png "Tela Inicial")
 <br><br>
 
-- **04: Log informando as atividades do Sistema**
-  - ![Tela_LogSistema](./resource/images/telas/aplicacao/Wireframe_telaLog.jpeg "Tela de logs das atividades do Sistema ConsultCAR")
+- **05: Tela retrospectiva DEV**
+  - ![DirCompact](./resource/images/wireframes/tela-retrospectiva-dev.png "Tela Retrospectiva DEV")
 <br><br>
 
-- **05: Diretorio de saída com arquivos descompactados**
-  - ![DirCompact](./resource/images/telas/aplicacao/Wireframe_telaDirSaida.arqDescomp.jpeg "Diretório com arquivos descompactados ConsultCAR")
+- **06: Tela retrospectiva SM**
+  - ![DiretoriosLogs](./resource/images/wireframes/tela-retrospectiva-sm.png "Tela Restrospectiva SM")
 <br><br>
 
-- **06: Arquivos gerados**
-  - ![DiretoriosLogs](./resource/images/telas/aplicacao/Wireframe_telaArqLogGerados.jpeg "Diretório de arquivos gerados ConsultCAR")
+- **07: Tela Sala Planning Poker DEV**
+  - ![DiretoriosLogs](./resource/images/wireframes/tela-sala-planning-poker-dev.png "Tela Sala Planning Poker DEV")
+<br><br>
+
+- **08: Tela Sala Planning Poker SM**
+  - ![DiretoriosLogs](./resource/images/wireframes/tela-sala-planning-poker-sm.png "Tela Sala Planning Poker SM")
 <br><br>
 
 ### :newspaper: **Banco de Dados** 
-- **07: Banco de Dados criado com extensão espacial**
-  - ![BancoDeDados](./resource/images/telas/bancoDeDados/Wireframe_BD.jpeg "Banco de Dados criado ConsultCAR")
-<br><br>
 
-- **08: Estrutura das colunas no Banco de Dados** 
-  - ![BancoDeDados](./resource/images/telas/bancoDeDados/Wireframe_ColunasBD.jpeg "Banco de Dados estrutura colunas ConsultCAR")
-<br><br>
+	. Em Construção
 
-- **09: Script de importação dos dados para popular o banco de dados**
-  - ![BancoDeDados](./resource/images/telas/bancoDeDados/Wireframe_CodigoBD.jpeg "Banco de Dados parte do script ConsultCAR")
 <br><br>
 
 </div>
