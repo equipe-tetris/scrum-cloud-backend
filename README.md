@@ -31,13 +31,54 @@ A equipe Tetris é composta pelos seguintes estudantes do 3º semestre de Banco 
 
 #  Scrum Cloud !<img src="/resource/images/icon-scrumcloud.png">
 ## :dart: Objetivo  
-Em construção
+Desenvolver um sistema que permita que equipes remotas realizem algumas cerimônias do SCRUM.
+As cerimônias para este projeto serão:
+• Planning;
+• Retrospective;
+Este sistema pode permitir que pessoas cadastradas utilizem o sistema, montando equipes e armazenando os dados históricos referente às estimativas do Planning e das cerimônias de Retrospective.
 </div>
 <br>
 
 ## :pencil: Requisitos funcionais 
+• Cadastros de Usuários contendo (Nome, e-mail e senha)
+• Existem dois perfis de usuário:
+	o Scrum Master
+	o Desenvolvedor
+• Por padrão, todos que se cadastram serão Scrum Masters
+• O Scrum Master após se cadastrar poderá criar seu time no sistema.
+• Ele poderá incluir um ou mais integrante em seu time
+• Ao inserir um integrante ele irá inserir o nome e o e-mail deste integrante
+• Após preencher os integrantes e salvar o time o sistema deverá disparar um e-mail para os integrantes realizarem o cadastro na plataforma.
+• Os usuários que forem cadastrados através do link que foi enviado por e-mail possuirão perfil de Dev naquele time em que ele foi convidado.
+• O Scrum Master poderá convidar uma pessoa para seu time copiando diretamente o link do time e enviando da maneira como preferir.
+• O cadastro através do Link deverá possuir as mesmas mecânicas do cadastro por e-mail.
+• O sistema deverá permitir a criação das salas de Planning e de Retrospective
+• Na sala de Planning, deverá ser permitido inserir um ou uma lista de itens que serão estimados.
+• Para a estimativa deverá ser utilizada técnicas como Planning Poker utilizando ou por tamanhos relativos
+• Para o Planning Poker pode ser utilizada a frequência de Fibonacci ou as cartas padrão
+• O sistema deverá trabalhar com um sistema de rodadas, ou seja, todos os itens inseridos na lista de estimativa serão estimados um por vez.
+• Neste sistema de rodadas, item atual deverá ficar em evidência na tela para que todos consigam ler.
+• Um sistema de chat em texto deverá ser implementado para comunicação na sala de estimativas.
+• Os participantes deverão escolher a carta para a estimativa e após selecioná-la um sistema de indicador deverá exibir quantas pessoas já escolheram as cartas e quantas faltam.
+• O Scrum Master terá acesso a uma funcionalidade onde ele poderá finalizar a votação, fazendo com que todas as cartas selecionadas sejam exibidas para todos os participantes.
+• O Scrum Master poderá então atribuir um valor para o item da rodada.
+• O Scrum Master poderá prosseguir para a próxima tarefa ou retornar a anterior.
+• As estimativas deverão ser salvas, permitindo que os usuários possam exportar as tarefas estimadas, bem como os valores atribuídos para os itens.
+• Na sala de retrospectiva, deverá ser permitido que cada participante da sala insira itens para serem avaliados.
+• Cada participante poderá inserir quantos itens quiser nas seguintes categorias: 1–Parar de Fazer 2–Diminuir a Frequência 3–Manter a Frequência 4–Aumentar a frequência 5-Começar a fazer;
+• Um sistema de chat de texto deverá ser implementado para a sala de Retrospective;
+• Os usuários poderão sinalizar que terminaram de preencher os itens;
+• Um indicador deverá ser exibido para todos os participantes da sala contendo a informação de quantos participantes finalizaram e quantos faltam.
+• O Scrum Master deverá ter acesso a um botão para iniciar a votação
+• As rodadas da votação serão feitas por categorias.
+• Durante a votação, deverão ser exibidos o nome da categoria para todos os participantes, bem como todos os itens inseridos pelos participantes naquela categoria em questão.
+• Durante a votação os participantes poderão selecionar quais itens eles acham pertinente e sinalizar que finalizaram.
+• O Scrum Master poderá mover a votação para a próxima categoria e para a categoria anterior.
+• Após todas as categorias serem votadas um resumo de todas as categorias será exibida.
+• Neste resumo, somente os 3 itens mais votados serão exibidos por categoria.
+• O Scrum Master então poderá finalizar a retrospectiva consolidando os itens mais votados.
+• Ao finalizar a retrospectiva o resumo poderá ser exportado.
 
-- Em construção
   
 <br>
 
@@ -47,6 +88,7 @@ Em construção
 <br>
 
 ## :dart: Público-alvo 
+Time de desenvolvimento utilizando metodo agil do scrum para 
 
 <div class="publico-alvo" style= "text-align:justify">
 Em construção
