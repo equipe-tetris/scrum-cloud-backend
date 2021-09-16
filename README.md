@@ -84,14 +84,12 @@ Este sistema pode permitir que pessoas cadastradas utilizem o sistema, montando 
 
 ## :heavy_check_mark: Funcionalidades 
 
-- Em construção 
+	.Disponibilizar de forma rapida as cerimonias do Scrum, e poder exporta-las para consulta durante a realização do projeto. 
 <br>
 
 ## :dart: Público-alvo 
-Time de desenvolvimento utilizando metodo agil do scrum para 
-
 <div class="publico-alvo" style= "text-align:justify">
-Em construção
+	.Times de desenvolvimento utilizando metodo agil do scrum para realização das cerimonias do scrum de forma rapida e organizada 
 </div>
 <br>
 
@@ -175,7 +173,7 @@ Em construção
 ## :chart_with_upwards_trend: Users Stories 
 <div class="users-stories" style= "text-align:justify">
 
-- ![user_stories](https://user-images.githubusercontent.com/81206214/120247320-766a2100-c249-11eb-8946-7060f9ae8fa8.jpg)
+- Em construção
 
 <br>  
 </div>
