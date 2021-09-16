@@ -189,7 +189,7 @@ Este sistema pode permitir que pessoas cadastradas utilizem o sistema, montando 
 
 - **Modelo Lógico**
   
-   ![Em Construção](./resource/images/")
+   ![Em Construção]
 <br><br>
 </div>
 
