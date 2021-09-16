@@ -84,7 +84,7 @@ Este sistema pode permitir que pessoas cadastradas utilizem o sistema, montando 
 
 ## :heavy_check_mark: Funcionalidades 
 
-	.Disponibilizar de forma rapida as cerimonias do Scrum, e poder exporta-las para consulta durante a realização do projeto. 
+.Disponibilizar de forma rapida as cerimonias do Scrum, e poder exporta-las para consulta durante a realização do projeto. 
 <br>
 
 ## :dart: Público-alvo 
