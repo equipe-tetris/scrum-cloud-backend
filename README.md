@@ -173,7 +173,14 @@ Este sistema pode permitir que pessoas cadastradas utilizem o sistema, montando 
 ## :chart_with_upwards_trend: Users Stories 
 <div class="users-stories" style= "text-align:justify">
 
-- Em construção
+
+-![Product Backlog](./resource/images/userstories/01.jpg "User Stories")
+-![Product Backlog](./resource/images/userstories/02.jpg "User Stories")
+-![Product Backlog](./resource/images/userstories/03.jpg "User Stories")
+-![Product Backlog](./resource/images/userstories/04.jpg "User Stories")
+-![Product Backlog](./resource/images/userstories/05.jpg "User Stories")
+-![Product Backlog](./resource/images/userstories/06.jpg "User Stories")
+-![Product Backlog](./resource/images/userstories/07.jpg "User Stories")
 
 <br>  
 </div>
