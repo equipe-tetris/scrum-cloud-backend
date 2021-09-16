@@ -149,7 +149,7 @@ Em construção
 
 - **Modelo Lógico**
   
-   ![MER_ModeloLogico](./resource/images/")
+   ![Em Construção](./resource/images/")
 <br><br>
 </div>
 
@@ -189,16 +189,9 @@ Em construção
 <br><br>
 
 ### :newspaper: **Banco de Dados** 
-- **07: Banco de Dados criado com extensão espacial**
-  - ![BancoDeDados](./resource/images/telas/bancoDeDados/Wireframe_BD.jpeg "Banco de Dados criado ConsultCAR")
-<br><br>
 
-- **08: Estrutura das colunas no Banco de Dados** 
-  - ![BancoDeDados](./resource/images/telas/bancoDeDados/Wireframe_ColunasBD.jpeg "Banco de Dados estrutura colunas ConsultCAR")
-<br><br>
+	. Em Construção
 
-- **09: Script de importação dos dados para popular o banco de dados**
-  - ![BancoDeDados](./resource/images/telas/bancoDeDados/Wireframe_CodigoBD.jpeg "Banco de Dados parte do script ConsultCAR")
 <br><br>
 
 </div>
