@@ -230,7 +230,7 @@ Equipes de Desenvolvimento praticantes de metodologias ágeis que utilizam cerim
 
 ![Product Backlog](./resource/images/product-backlog/ProductBackLog_parte_II.png "Backlog")<br>
 
-![Product Backlog](./resource/images/product-backlog/ProductBackLog_parte_II.png "Backlog")<br>
+![Product Backlog](./resource/images/product-backlog/ProductBackLog_parte_III.png "Backlog")<br>
 
 
 <br>  
