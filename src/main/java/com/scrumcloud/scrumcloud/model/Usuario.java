@@ -19,7 +19,7 @@ public class Usuario {
     @Column(name="nome", nullable = false)
     private String nome;
 
-    @Column(name="email", nullable = false, unique = true)
+    @Column(name="email", nullable = false)
     private String email;
 
     @Column(name="senha", nullable = false)
@@ -27,4 +27,5 @@ public class Usuario {
 
     @Column(name="tipo_usuario", nullable = false)
     private String tipoUsuario;
+
 }
