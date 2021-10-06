@@ -3,14 +3,13 @@ package com.scrumcloud.scrumcloud.resource;
 import com.scrumcloud.scrumcloud.dto.AuthDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.Usuario;
+import com.scrumcloud.scrumcloud.service.EquipeService;
 import com.scrumcloud.scrumcloud.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.List;
 
 @CrossOrigin
@@ -20,6 +19,9 @@ public class UsuarioResource {
 
     @Autowired
     UsuarioService service;
+
+    @Autowired
+    EquipeService equipeService;
 
     @PostMapping("/cadastrar")
     public ResponseEntity<String> cadastroUsuario(@RequestBody Usuario usuario) {
@@ -41,4 +43,11 @@ public class UsuarioResource {
 
         return ResponseEntity.ok(auth);
     }
+
+    /*@PostMapping("/cadastro-dev/{idTime}")
+    public ResponseEntity<String> cadastroDev(@RequestBody Usuario user, @PathVariable Long idTime) {
+        Usuario usuario = service.cadastroDev(user);
+
+
+    }*/
 }

@@ -17,4 +17,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     @Query("SELECT new com.scrumcloud.scrumcloud.dto.UsuarioDTO(user.id, user.nome, user.email, user.tipoUsuario) " +
             "from Usuario user WHERE lower(user.email) like :email and user.senha like :senha")
     UsuarioDTO authentication(String email, String senha);
+
 }
