@@ -1,4 +1,4 @@
-## :mortar_board: Wireframes 
+## :paintbrush: Wireframes 
 <div class="wireframes" style= "text-align:justify">
 
 - **01: Tela de Login** *- Sujeita a modificações*
