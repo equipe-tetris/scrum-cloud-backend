@@ -1,5 +1,6 @@
 package com.scrumcloud.scrumcloud.service;
 
+import com.scrumcloud.scrumcloud.dto.EmailListDTO;
 import com.scrumcloud.scrumcloud.dto.EquipeDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.Equipe;
@@ -9,8 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class EquipeService {
@@ -55,8 +55,26 @@ public class EquipeService {
         return dto;
     }
 
-    /*public EquipeDTO inserirUsuarioEquipe(Long idUser, Long idTime) {
+    public Equipe inserirUsuarioEquipe(Usuario user, Long idTime) {
+        Optional<Equipe> equipeRef = equipeRepository.findById(idTime);
 
-    }*/
+        List<Usuario> listaAux = equipeRef.get().getListaUsuarios();
+        listaAux.add(user);
+
+        equipeRef.get().setListaUsuarios(listaAux);
+
+        Equipe equipe = new Equipe();
+
+        equipe.setId(equipeRef.orElseThrow().getId());
+        equipe.setNome(equipeRef.orElseThrow().getNome());
+        equipe.setDescricao(equipeRef.orElseThrow().getDescricao());
+        equipe.setDataCriacao(equipeRef.orElseThrow().getDataCriacao());
+        equipe.setUsuario(equipeRef.orElseThrow().getUsuario());
+        equipe.setListaUsuarios(equipeRef.orElseThrow().getListaUsuarios());
+
+
+        return equipeRepository.save(equipe);
+    }
+
 
 }

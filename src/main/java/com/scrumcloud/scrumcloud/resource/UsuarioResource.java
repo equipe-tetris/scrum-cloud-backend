@@ -2,6 +2,7 @@ package com.scrumcloud.scrumcloud.resource;
 
 import com.scrumcloud.scrumcloud.dto.AuthDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
+import com.scrumcloud.scrumcloud.model.Equipe;
 import com.scrumcloud.scrumcloud.model.Usuario;
 import com.scrumcloud.scrumcloud.service.EquipeService;
 import com.scrumcloud.scrumcloud.service.UsuarioService;
@@ -44,10 +45,15 @@ public class UsuarioResource {
         return ResponseEntity.ok(auth);
     }
 
-    /*@PostMapping("/cadastro-dev/{idTime}")
+    @PostMapping("/cadastro-dev/{idTime}")
     public ResponseEntity<String> cadastroDev(@RequestBody Usuario user, @PathVariable Long idTime) {
         Usuario usuario = service.cadastroDev(user);
+        Equipe equipe = equipeService.inserirUsuarioEquipe(user, idTime);
 
-
-    }*/
+        if(equipe != null) {
+            return ResponseEntity.ok("Cadastro Realizado!");
+        } else {
+            return (ResponseEntity<String>) ResponseEntity.badRequest();
+        }
+    }
 }

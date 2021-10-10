@@ -1,5 +1,6 @@
 package com.scrumcloud.scrumcloud.resource;
 
+import com.scrumcloud.scrumcloud.dto.EmailListDTO;
 import com.scrumcloud.scrumcloud.dto.EquipeDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.Equipe;
@@ -47,4 +48,5 @@ public class EquipeResource {
 
         return ResponseEntity.ok(equipe);
     }
+
 }
