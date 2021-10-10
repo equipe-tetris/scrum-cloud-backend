@@ -82,5 +82,10 @@ Equipes de Desenvolvimento praticantes de metodologias ágeis que utilizam cerim
 | ------------- |:-------------:|
 | 08/09 a 19/09/2021      | [Sprint 1](https://github.com/equipe-tetris/scrum-cloud-backend/blob/sprint-1/README.md)     |
 | 20/09 a 10/10/2021      | [Sprint 2](https://github.com/equipe-tetris/scrum-cloud-backend/blob/sprint-2/README.md)     |
+| 18/10 a 07/11/2021      | Sprint 3     |
+| 08/11 a 28/11/2021      | Sprint 4     |
+
+<!--
 | 18/10 a 07/11/2021      | [Sprint 3](https://github.com/equipe-tetris/scrum-cloud-backend/blob/sprint-3/README.md)     |
 | 08/11 a 28/11/2021      | [Sprint 4](https://github.com/equipe-tetris/scrum-cloud-backend/blob/sprint-4/README.md)     |
+-->
