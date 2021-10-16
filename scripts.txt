@@ -1,0 +1,25 @@
+
+
+CREATE TABLE scrumcloud.usuario (
+	id BIGINT auto_increment NOT NULL,
+	nome varchar(100) NOT NULL,
+	email varchar(70) NOT NULL,
+	senha varchar(50) NOT NULL,
+	tipo_usuario varchar(20) NOT NULL,
+	CONSTRAINT usuario_pk PRIMARY KEY (id),
+	CONSTRAINT usuario_uk UNIQUE KEY (email)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE scrumcloud.integrantes_equipe (
+	equipe BIGINT NOT NULL,
+	usuario BIGINT NOT NULL,
+	CONSTRAINT integrantes_equipe_FK FOREIGN KEY (equipe) REFERENCES scrumcloud.equipe(id),
+	CONSTRAINT integrantes_equipe_FK_1 FOREIGN KEY (usuario) REFERENCES scrumcloud.usuario(id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;

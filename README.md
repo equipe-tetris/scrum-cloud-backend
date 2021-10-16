@@ -1,18 +1,20 @@
-<div style = "text-align:center">
+# :desktop_computer: Sprint 2
 
-# Seja bem-vindo ao <img src="/resource/images/icon-scrumcloud.png">
+### :dart: Desenvolvimento da aplicação:
+- Permitir cadastro de Usuário :heavy_check_mark:
+- Permitir cadastro de Times de Desenvolvimento :heavy_check_mark:
+- Disparar e-mails com links para cadastramento :heavy_check_mark:
+- Permitir criar sala de reunião :heavy_check_mark:
+- Permitir incluir itens para votação em reuniões de Planning :heavy_check_mark:
+- Permitir definir métrica de votação :heavy_check_mark:
+- Permitir encerramento da votação de um item :heavy_check_mark:
+- Gerar sugestão de valor para o item em questão pós encerramento de votação dele para o S.M. :heavy_check_mark:
+- Permitir definição de um valor ao item com votação encerrada :heavy_check_mark:
 
-</div>
-<div style="text-align:center">
-
-### Olá! Somos a equipe Tetris responsáveis pelo desenvolvimento da aplicação web ScrumCloud.
-
-</div>
 <br>
 
-# ![trabalho-em-equipe](https://user-images.githubusercontent.com/81206214/120873313-f65cf780-c577-11eb-8ba2-15d1925c0e4b.png)   O Time 
-<div class="time" style= "text-align:justify">
-A equipe Tetris é composta pelos seguintes estudantes do 3º semestre de Banco de Dados pela FATEC de São José dos Campos:<br><br>
+### :camera: Screenshots 
+<div class="screenshots" style= "text-align:justify">
 
 - ***Product Owner***
   - [Nágella Nasser](https://github.com/nagellanasser) [<center><img src="https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/linkedin.png" /></center>](https://www.linkedin.com/in/nagellanasser/)  
