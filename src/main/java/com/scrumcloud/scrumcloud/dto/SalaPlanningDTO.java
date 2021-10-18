@@ -17,6 +17,7 @@ public class SalaPlanningDTO {
     private LocalDate dataCriacao;
     private String metricaSala;
     private Long idEquipe;
+    private String nomeEquipe;
 
     public SalaPlanningDTO(SalaPlanningDTO salaPlanning){
         this.nome = salaPlanning.getNome();
@@ -25,10 +26,5 @@ public class SalaPlanningDTO {
         this.idEquipe = salaPlanning.getIdEquipe();
     }
 
-    public SalaPlanningDTO(String nome, Long scrumMaster, String metricaSala, Long idEquipe) {
-        this.nome = nome;
-        this.scrumMaster = scrumMaster;
-        this.metricaSala = metricaSala;
-        this.idEquipe = idEquipe;
-    }
+
 }

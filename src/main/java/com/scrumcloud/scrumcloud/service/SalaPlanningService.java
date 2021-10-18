@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class SalaPlanningService {
@@ -38,4 +39,14 @@ public class SalaPlanningService {
 
         return repository.save(salaPlanning);
     }
+
+    public List<SalaPlanningDTO> buscarSalasPorIdUsuario(Long idUser) {
+        return repository.buscarSalasPorIdUsuario(idUser);
+    }
+
+    public SalaPlanningDTO buscarSalaPorId(Long id) {
+        return repository.buscarSalaPorId(id);
+    }
+
+
 }
