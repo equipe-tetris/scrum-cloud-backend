@@ -2,10 +2,12 @@ package com.scrumcloud.scrumcloud.service;
 
 import com.scrumcloud.scrumcloud.dto.EmailListDTO;
 import com.scrumcloud.scrumcloud.dto.EquipeDTO;
+import com.scrumcloud.scrumcloud.dto.ItemComboDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.Equipe;
 import com.scrumcloud.scrumcloud.model.Usuario;
 import com.scrumcloud.scrumcloud.repository.EquipeRepository;
+import com.scrumcloud.scrumcloud.utils.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -74,6 +76,15 @@ public class EquipeService {
 
 
         return equipeRepository.save(equipe);
+    }
+
+    public Equipe findById(Long id){
+        Optional<Equipe> equipe = equipeRepository.findById(id);
+        return equipe.orElseThrow(() -> new ObjectNotFoundException("Equipe não encontrado!"));
+    }
+
+    public List<ItemComboDTO> buscarEquipesItemComboPorUsuario(Long idUser) {
+        return equipeRepository.buscarEquipesItemComboPorUsuario(idUser);
     }
 
 

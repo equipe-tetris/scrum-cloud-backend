@@ -1,10 +1,8 @@
 package com.scrumcloud.scrumcloud.resource;
 
-import com.scrumcloud.scrumcloud.dto.EmailListDTO;
 import com.scrumcloud.scrumcloud.dto.EquipeDTO;
+import com.scrumcloud.scrumcloud.dto.ItemComboDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
-import com.scrumcloud.scrumcloud.model.Equipe;
-import com.scrumcloud.scrumcloud.model.Usuario;
 import com.scrumcloud.scrumcloud.service.EquipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +45,13 @@ public class EquipeResource {
         EquipeDTO equipe = equipeService.buscarPorId(id);
 
         return ResponseEntity.ok(equipe);
+    }
+
+    @GetMapping("/buscarEquipesComboBoxPorUsuario/{idUser}")
+    public ResponseEntity<List<ItemComboDTO>> buscarEquipesComboBoxPorUsuario(@PathVariable Long idUser) {
+        List<ItemComboDTO> list = equipeService.buscarEquipesItemComboPorUsuario(idUser);
+
+        return ResponseEntity.ok(list);
     }
 
 }

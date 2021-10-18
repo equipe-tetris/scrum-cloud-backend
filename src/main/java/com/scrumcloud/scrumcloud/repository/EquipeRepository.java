@@ -1,6 +1,7 @@
 package com.scrumcloud.scrumcloud.repository;
 
 import com.scrumcloud.scrumcloud.dto.EquipeDTO;
+import com.scrumcloud.scrumcloud.dto.ItemComboDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.Equipe;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,4 +21,9 @@ public interface EquipeRepository extends JpaRepository<Equipe, Long> {
            "INNER JOIN e.listaUsuarios user " +
            "WHERE e.id = :idEquipe")
     public List<UsuarioDTO> buscarIntegrantesEquipe(Long idEquipe);
+
+   @Query("SELECT new com.scrumcloud.scrumcloud.dto.ItemComboDTO(e.id, e.nome) " +
+           "FROM Equipe e " +
+           "WHERE e.usuario.id = :idUser")
+    public List<ItemComboDTO> buscarEquipesItemComboPorUsuario(Long idUser);
 }
