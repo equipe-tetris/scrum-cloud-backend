@@ -1,4 +1,3 @@
-
 CREATE TABLE `usuario` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
