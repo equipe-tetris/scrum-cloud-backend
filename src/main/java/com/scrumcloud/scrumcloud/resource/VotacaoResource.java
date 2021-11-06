@@ -1,9 +1,16 @@
 package com.scrumcloud.scrumcloud.resource;
 
+import com.scrumcloud.scrumcloud.dto.AtualizacaoVotoDTO;
+import com.scrumcloud.scrumcloud.dto.ResultadoVotosDTO;
+import com.scrumcloud.scrumcloud.dto.VotacaoDTO;
+import com.scrumcloud.scrumcloud.model.Votacao;
+import com.scrumcloud.scrumcloud.service.VotacaoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.async.DeferredResult;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
@@ -12,28 +19,38 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping("/votacao")
 public class VotacaoResource {
 
+    @Autowired
+    VotacaoService service;
+
+    @PostMapping("/inserirVoto")
+    public ResponseEntity inserirVoto(@RequestBody VotacaoDTO votacaoDTO) {
+        Votacao votacao = service.inserirVoto(votacaoDTO);
+
+        return ResponseEntity.ok(201);
+    }
+
+
     @GetMapping("/status-task/{idTask}")
-    DeferredResult<String> test(@PathVariable Long idTask){
+    DeferredResult<List<AtualizacaoVotoDTO>> atualizacaoVotoPorIdTask(@PathVariable Long idTask){
         Long timeOutInMilliSec = 100000L;
         String timeOutResp = "Time Out.";
-        DeferredResult<String> deferredResult = new DeferredResult<>(timeOutInMilliSec,timeOutResp);
-        CompletableFuture.runAsync(()->{
+        DeferredResult<List<AtualizacaoVotoDTO>> deferredResult = new DeferredResult<>(timeOutInMilliSec,timeOutResp);
+        CompletableFuture.runAsync(() -> {
             try {
-                String teste = "false" + idTask.toString();
-                TimeUnit.SECONDS.sleep(10);
-                //set result after completing task to return response to client
-                try{
-                    Thread.sleep(3000);
-                    teste = "true" + idTask.toString();
+                List<AtualizacaoVotoDTO> listVotos = service.atualizacaoVotoPorIdTask(idTask);
 
-                }catch(InterruptedException e){
-                    e.printStackTrace();
-                }
-
-                deferredResult.setResult(teste);
+                deferredResult.setResult(listVotos);
             }catch (Exception ex){
+
             }
         });
         return deferredResult;
     }
+
+    @GetMapping("/buscarVotosPorIdTask/{idTask}")
+    public ResponseEntity<ResultadoVotosDTO> buscarVotosPorIdTask(@PathVariable Long idTask) {
+        ResultadoVotosDTO result = service.buscarVotosPorIdTask(idTask);
+        return ResponseEntity.ok(result);
+    }
+
 }

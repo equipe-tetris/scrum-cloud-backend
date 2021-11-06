@@ -5,11 +5,13 @@ import com.scrumcloud.scrumcloud.model.Equipe;
 import com.scrumcloud.scrumcloud.model.SalaPlanning;
 import com.scrumcloud.scrumcloud.model.Usuario;
 import com.scrumcloud.scrumcloud.repository.SalaPlanningRepository;
+import com.scrumcloud.scrumcloud.utils.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SalaPlanningService {
@@ -46,6 +48,11 @@ public class SalaPlanningService {
 
     public SalaPlanningDTO buscarSalaPorId(Long id) {
         return repository.buscarSalaPorId(id);
+    }
+
+    public SalaPlanning findById(Long id) {
+        Optional<SalaPlanning> salaPlanning = repository.findById(id);
+        return salaPlanning.orElseThrow(() -> new ObjectNotFoundException("Usuário não encontrado!"));
     }
 
 

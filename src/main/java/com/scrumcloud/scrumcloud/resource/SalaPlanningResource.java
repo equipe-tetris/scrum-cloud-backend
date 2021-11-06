@@ -4,6 +4,7 @@ import com.scrumcloud.scrumcloud.dto.EquipeDTO;
 import com.scrumcloud.scrumcloud.dto.SalaPlanningDTO;
 import com.scrumcloud.scrumcloud.model.SalaPlanning;
 import com.scrumcloud.scrumcloud.service.SalaPlanningService;
+import com.scrumcloud.scrumcloud.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +20,14 @@ public class SalaPlanningResource {
     @Autowired
     SalaPlanningService service;
 
+    @Autowired
+    TaskService taskService;
+
     @PostMapping("/cadastrar")
-    public ResponseEntity cadastroPlanning(@RequestBody SalaPlanningDTO salaPlanning) {
+    public ResponseEntity<SalaPlanning> cadastroPlanning(@RequestBody SalaPlanningDTO salaPlanning) {
        SalaPlanning sala = service.cadastrar(salaPlanning);
 
-        return ResponseEntity.ok(201);
+       return ResponseEntity.ok(sala);
     }
 
     @GetMapping("/buscarSalasPorIdUsuario/{idUser}")
