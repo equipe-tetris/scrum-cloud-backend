@@ -12,26 +12,26 @@
 
 <br>
 
-<!--
+
 ### :camera: Screenshots 
 <div class="screenshots" style= "text-align:justify">
 
-- **01: Tela de Login** 
-![Tela_Login](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/screenshots/sprint-2/tela-login.jpeg "Tela de login do ScrumCloud ")
+- **Tela de Votação de Planning** 
+![Tela_Votação_de_Planning](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/screenshots/sprint-3/Tela_Votacao_Planning.jpeg "Tela Votação de Planning")
 <br><br>
 
-- ![Tela_Config_Planning_2](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/screenshots/sprint-2/tela-config-sala-planning-2.png "Tela de Configuração de Planning") 
+- **Tabelas criadas no Banco de Dados**<br>
+![Tabelas_Criadas_BD](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/Tbls_bd.jpeg "Tabelas criadas no banco de dados") 
 <br><br>
 </div>
 
 <br>
 
-
+<!--
 ### :bar_chart: Apresentação: 
 - SPRINT-2 .:: [Clique aqui](<link>) ::.
 <br>
 
 ### :chart_with_upwards_trend: Retrospectiva:
 ![Retrospectiva](<link> "Retrospectiva-3") 
-
 -->
