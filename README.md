@@ -57,11 +57,11 @@
 
 <br>
 
-<!--
+
 ### :bar_chart: Apresentação: 
-- SPRINT-2 .:: [Clique aqui](<incluir_link>) ::.
+- SPRINT-2 .:: [Clique aqui](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/apresentacoes/SPRINT%202.pdf) ::.
 <br>
 
 ### :chart_with_upwards_trend: Retrospectiva:
-![Retrospectiva](<incluir_link> "Retrospectiva-2") 
--->
+![Retrospectiva](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/retrospectivas/Retrospectiva_Sprint2.png "Retrospectiva-2") 
+
