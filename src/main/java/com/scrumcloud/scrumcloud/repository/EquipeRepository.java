@@ -18,7 +18,7 @@ public interface EquipeRepository extends JpaRepository<Equipe, Long> {
 
    @Query("SELECT new com.scrumcloud.scrumcloud.dto.UsuarioDTO(user.id, user.nome, user.email, user.tipoUsuario) " +
            "FROM Equipe e " +
-           "INNER JOIN e.listaUsuarios user " +
+           "INNER JOIN e.integrantesEquipe user " +
            "WHERE e.id = :idEquipe")
     public List<UsuarioDTO> buscarIntegrantesEquipe(Long idEquipe);
 

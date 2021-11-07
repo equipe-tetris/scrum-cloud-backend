@@ -41,7 +41,7 @@ public class Equipe {
             name = "integrantes_equipe",
             joinColumns = { @JoinColumn(name = "id_equipe") },
             inverseJoinColumns = { @JoinColumn(name = "id_usuario") } )
-    private List<Usuario> listaUsuarios;
+    private List<Usuario> integrantesEquipe;
 
 
 }

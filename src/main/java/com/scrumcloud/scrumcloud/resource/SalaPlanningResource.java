@@ -2,7 +2,9 @@ package com.scrumcloud.scrumcloud.resource;
 
 import com.scrumcloud.scrumcloud.dto.EquipeDTO;
 import com.scrumcloud.scrumcloud.dto.SalaPlanningDTO;
+import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.SalaPlanning;
+import com.scrumcloud.scrumcloud.model.Usuario;
 import com.scrumcloud.scrumcloud.service.SalaPlanningService;
 import com.scrumcloud.scrumcloud.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +44,12 @@ public class SalaPlanningResource {
         SalaPlanningDTO sala = service.buscarSalaPorId(id);
 
         return ResponseEntity.ok(sala);
+    }
+
+    @GetMapping("/buscarIntegrantesEquipePorIdSala/{idSala}")
+    public ResponseEntity<List<UsuarioDTO>>buscarIntegrantesEquipePorIdSala(@PathVariable Long idSala){
+        List<UsuarioDTO> list = service.buscarIntegrantesEquipePorIdSala(idSala);
+
+        return ResponseEntity.ok(list);
     }
 }

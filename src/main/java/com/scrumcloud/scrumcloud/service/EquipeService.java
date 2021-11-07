@@ -60,10 +60,10 @@ public class EquipeService {
     public Equipe inserirUsuarioEquipe(Usuario user, Long idTime) {
         Optional<Equipe> equipeRef = equipeRepository.findById(idTime);
 
-        List<Usuario> listaAux = equipeRef.get().getListaUsuarios();
+        List<Usuario> listaAux = equipeRef.get().getIntegrantesEquipe();
         listaAux.add(user);
 
-        equipeRef.get().setListaUsuarios(listaAux);
+        equipeRef.get().setIntegrantesEquipe(listaAux);
 
         Equipe equipe = new Equipe();
 
@@ -72,7 +72,7 @@ public class EquipeService {
         equipe.setDescricao(equipeRef.orElseThrow().getDescricao());
         equipe.setDataCriacao(equipeRef.orElseThrow().getDataCriacao());
         equipe.setUsuario(equipeRef.orElseThrow().getUsuario());
-        equipe.setListaUsuarios(equipeRef.orElseThrow().getListaUsuarios());
+        equipe.setIntegrantesEquipe(equipeRef.orElseThrow().getIntegrantesEquipe());
 
 
         return equipeRepository.save(equipe);
