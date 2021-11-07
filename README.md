@@ -2,13 +2,13 @@
 
 ### :dart: Desenvolvimento da aplicação:
 - Gerar link de reuniões marcadas para ser compartilhado  :heavy_check_mark:
-- Permitir definir Scrum Master da reunião :heavy_check_mark:
+- Permitir definir Scrum Master da reunião :hourglass:
 - Evidenciar na tela item em votação :heavy_check_mark:
 - Permitir conversa entre participantes :heavy_check_mark:
 - Permitir retornar ou avançar item da lista de votação :heavy_check_mark:
-- Permitir visualização de votos após encerramento de votação do item :heavy_check_mark:
-- Permitir incluir itens para votação em reuniões de Retrospective:heavy_check_mark:
-- Permitir sinalização de termino de inserção de itens por usuário nas reuniões de Retrospective:heavy_check_mark:
+- Permitir visualização de votos após encerramento de votação do item :hourglass:
+- Permitir incluir itens para votação em reuniões de Retrospective :hourglass:
+- Permitir sinalização de termino de inserção de itens por usuário nas reuniões de Retrospective :hourglass:
 
 <br>
 
