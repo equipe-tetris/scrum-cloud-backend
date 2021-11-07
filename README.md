@@ -1,13 +1,12 @@
 <!-- Readme - MAIN -->
 
-<div style = "text-align:center">
-# Seja bem-vindo ao <img src="/assets/images/icon-scrumcloud.png">
-</div>
-<div style="text-align:center">
+# Seja bem-vindo ao <img src="/resource/images/icon-scrumcloud.png">
+
 ### Olá! Somos a equipe Tetris responsáveis pelo desenvolvimento da aplicação web ScrumCloud.
-</div>
 <br>
-# ![trabalho-em-equipe](https://user-images.githubusercontent.com/81206214/120873313-f65cf780-c577-11eb-8ba2-15d1925c0e4b.png)   O Time 
+
+# ![trabalho-em-equipe](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/trabalho-em-equipe.png)   O Time 
+
 <div class="time" style= "text-align:justify">
 A equipe Tetris é composta pelos seguintes estudantes do 3º semestre de Banco de Dados pela FATEC de São José dos Campos: <br><br>
 
@@ -71,6 +70,8 @@ Equipes de Desenvolvimento praticantes de metodologias ágeis que utilizam cerim
 - [Prototipação](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/wireframes/Wireframes.md)
 - [Modelo Conceitual do Banco de Dados](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/MER.jpeg)
 - [Sprint planning](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/SprintReleasePlan.PNG)
+- [Portifólio - ITIL](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/documentacao/ITIL%20portifolio%20scrum%20clound.pdf)
+- [BSC](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/documentacao/BSC%20Scrum%20cloud.pdf)
 <br>
 
 ## :calendar: Sprints
@@ -79,10 +80,10 @@ Equipes de Desenvolvimento praticantes de metodologias ágeis que utilizam cerim
 | ------------- |:-------------:|
 | 08/09 a 19/09/2021      | [Sprint 1](https://github.com/equipe-tetris/scrum-cloud-backend/blob/sprint-1/README.md)     |
 | 20/09 a 10/10/2021      | [Sprint 2](https://github.com/equipe-tetris/scrum-cloud-backend/blob/sprint-2/README.md)     |
-| 18/10 a 07/11/2021      | Sprint 3     |
+|18/10 a 07/11/2021       | [Sprint 3](https://github.com/equipe-tetris/scrum-cloud-backend/blob/sprint-3/README.md)     |
 | 08/11 a 28/11/2021      | Sprint 4     |
 
 <!--
-| 18/10 a 07/11/2021      | [Sprint 3](https://github.com/equipe-tetris/scrum-cloud-backend/blob/sprint-3/README.md)     |
+|    |
 | 08/11 a 28/11/2021      | [Sprint 4](https://github.com/equipe-tetris/scrum-cloud-backend/blob/sprint-4/README.md)     |
 -->
