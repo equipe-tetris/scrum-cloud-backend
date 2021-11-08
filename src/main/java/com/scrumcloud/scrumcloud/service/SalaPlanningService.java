@@ -1,6 +1,7 @@
 package com.scrumcloud.scrumcloud.service;
 
 import com.scrumcloud.scrumcloud.dto.SalaPlanningDTO;
+import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.Equipe;
 import com.scrumcloud.scrumcloud.model.SalaPlanning;
 import com.scrumcloud.scrumcloud.model.Usuario;
@@ -34,7 +35,7 @@ public class SalaPlanningService {
         SalaPlanning salaPlanning = new SalaPlanning();
 
         salaPlanning.setNome(objRel.getNome());
-        salaPlanning.setScrumMaster(usuario);
+        salaPlanning.setUsuario(usuario);
         salaPlanning.setDataCriacao(LocalDate.now());
         salaPlanning.setMetricaSala(objRel.getMetricaSala());
         salaPlanning.setEquipe(equipe);
@@ -53,6 +54,10 @@ public class SalaPlanningService {
     public SalaPlanning findById(Long id) {
         Optional<SalaPlanning> salaPlanning = repository.findById(id);
         return salaPlanning.orElseThrow(() -> new ObjectNotFoundException("Usuário não encontrado!"));
+    }
+
+    public List<UsuarioDTO> buscarIntegrantesEquipePorIdSala(Long idSala) {
+        return repository.buscarIntegrantesEquipePorIdSala(idSala);
     }
 
 
