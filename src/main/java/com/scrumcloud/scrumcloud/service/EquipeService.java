@@ -2,10 +2,12 @@ package com.scrumcloud.scrumcloud.service;
 
 import com.scrumcloud.scrumcloud.dto.EmailListDTO;
 import com.scrumcloud.scrumcloud.dto.EquipeDTO;
+import com.scrumcloud.scrumcloud.dto.ItemComboDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.Equipe;
 import com.scrumcloud.scrumcloud.model.Usuario;
 import com.scrumcloud.scrumcloud.repository.EquipeRepository;
+import com.scrumcloud.scrumcloud.utils.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -58,10 +60,10 @@ public class EquipeService {
     public Equipe inserirUsuarioEquipe(Usuario user, Long idTime) {
         Optional<Equipe> equipeRef = equipeRepository.findById(idTime);
 
-        List<Usuario> listaAux = equipeRef.get().getListaUsuarios();
+        List<Usuario> listaAux = equipeRef.get().getIntegrantesEquipe();
         listaAux.add(user);
 
-        equipeRef.get().setListaUsuarios(listaAux);
+        equipeRef.get().setIntegrantesEquipe(listaAux);
 
         Equipe equipe = new Equipe();
 
@@ -70,10 +72,19 @@ public class EquipeService {
         equipe.setDescricao(equipeRef.orElseThrow().getDescricao());
         equipe.setDataCriacao(equipeRef.orElseThrow().getDataCriacao());
         equipe.setUsuario(equipeRef.orElseThrow().getUsuario());
-        equipe.setListaUsuarios(equipeRef.orElseThrow().getListaUsuarios());
+        equipe.setIntegrantesEquipe(equipeRef.orElseThrow().getIntegrantesEquipe());
 
 
         return equipeRepository.save(equipe);
+    }
+
+    public Equipe findById(Long id){
+        Optional<Equipe> equipe = equipeRepository.findById(id);
+        return equipe.orElseThrow(() -> new ObjectNotFoundException("Equipe não encontrado!"));
+    }
+
+    public List<ItemComboDTO> buscarEquipesItemComboPorUsuario(Long idUser) {
+        return equipeRepository.buscarEquipesItemComboPorUsuario(idUser);
     }
 
 
