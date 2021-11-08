@@ -15,5 +15,7 @@ public class ResultadoVotosDTO {
 
     private Integer mediaVotosNumericos;
 
+    private int numVotos;
+
     private int moda;
 }

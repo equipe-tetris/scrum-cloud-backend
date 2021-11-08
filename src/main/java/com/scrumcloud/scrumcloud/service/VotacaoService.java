@@ -80,6 +80,7 @@ public class VotacaoService {
             }
         });
 
+        result.setNumVotos(listAux.size());
         result.setVotosNumber(listNumAux);
         result.setVotosString(listStrAux);
         result.setMediaVotosNumericos(calcularMediaVotosNumericos(listNumAux));
