@@ -35,7 +35,7 @@ public class SalaPlanningService {
         SalaPlanning salaPlanning = new SalaPlanning();
 
         salaPlanning.setNome(objRel.getNome());
-        salaPlanning.setScrumMaster(usuario);
+        salaPlanning.setUsuario(usuario);
         salaPlanning.setDataCriacao(LocalDate.now());
         salaPlanning.setMetricaSala(objRel.getMetricaSala());
         salaPlanning.setEquipe(equipe);

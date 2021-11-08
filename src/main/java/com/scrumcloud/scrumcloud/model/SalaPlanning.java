@@ -26,8 +26,8 @@ public class SalaPlanning {
     private String nome;
 
     @ManyToOne(fetch= FetchType.LAZY)
-    @JoinColumn(name="scrum_master")
-    private Usuario scrumMaster;
+    @JoinColumn(name="usuario")
+    private Usuario usuario;
 
     @Column(name="data_criacao")
     private LocalDate dataCriacao;
