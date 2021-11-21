@@ -24,11 +24,10 @@ public class VotacaoResource {
 
     @PostMapping("/inserirVoto")
     public ResponseEntity inserirVoto(@RequestBody VotacaoDTO votacaoDTO) {
-        Votacao votacao = service.inserirVoto(votacaoDTO);
+        service.inserirVoto(votacaoDTO);
 
         return ResponseEntity.ok(201);
     }
-
 
     @GetMapping("/status-task/{idTask}")
     DeferredResult<List<AtualizacaoVotoDTO>> atualizacaoVotoPorIdTask(@PathVariable Long idTask){
@@ -47,10 +46,24 @@ public class VotacaoResource {
         return deferredResult;
     }
 
-    @GetMapping("/buscarVotosPorIdTask/{idTask}")
-    public ResponseEntity<ResultadoVotosDTO> buscarVotosPorIdTask(@PathVariable Long idTask) {
-        ResultadoVotosDTO result = service.buscarVotosPorIdTask(idTask);
+    @GetMapping("/buscarInfoVotosPorIdTask/{idTask}")
+    public ResponseEntity<ResultadoVotosDTO> buscarInfoVotosPorIdTask(@PathVariable Long idTask) {
+        ResultadoVotosDTO result = service.buscarInfoVotosPorIdTask(idTask);
         return ResponseEntity.ok(result);
     }
+
+    @GetMapping("/buscarNumVotosPorIdTask/{idTask}")
+    public ResponseEntity<Integer> buscarNumVotosPorIdTask(@PathVariable Long idTask) {
+        Integer numVotos = null;
+        try {
+            numVotos = service.buscarNumVotosPorIdTask(idTask);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+
+        return ResponseEntity.ok().body(numVotos);
+    }
+
 
 }

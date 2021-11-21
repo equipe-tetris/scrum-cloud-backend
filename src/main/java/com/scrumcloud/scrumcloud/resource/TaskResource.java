@@ -31,7 +31,26 @@ public class TaskResource {
     }
 
     @PostMapping("/mudarStatusTaskPorId")
-    public void mudarStatusTaksPorId(@RequestParam Boolean statusTask, @RequestParam Long idTask) {
-        service.mudarStatusTaskPorId(statusTask, idTask);
+    public ResponseEntity mudarStatusTaksPorId(@RequestParam Boolean statusTask, @RequestParam Long idTask) {
+        try {
+            service.mudarStatusTaskPorId(statusTask, idTask);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ResponseEntity.ok(201);
+    }
+
+    @GetMapping("/getStatusTaskPorId/{idTask}")
+    public ResponseEntity<Boolean> getStatusTaskPorId(@PathVariable Long idTask) {
+        Boolean status = null;
+
+        try {
+            status = service.getStatusTaskPorId(idTask);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ResponseEntity.ok().body(status);
     }
 }

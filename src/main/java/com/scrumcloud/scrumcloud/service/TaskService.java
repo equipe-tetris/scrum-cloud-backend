@@ -51,4 +51,9 @@ public class TaskService {
         Optional<Task> task = repository.findById(id);
         return task.orElseThrow(() -> new ObjectNotFoundException("Task não encontrada!"));
     }
+
+    public Boolean getStatusTaskPorId(Long idTask) {
+        Boolean status = repository.getStatusTaskPorId(idTask);
+        return status;
+    }
 }
