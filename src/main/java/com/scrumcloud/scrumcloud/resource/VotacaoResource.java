@@ -65,5 +65,13 @@ public class VotacaoResource {
         return ResponseEntity.ok().body(numVotos);
     }
 
+    @GetMapping("/buscarVotoPorIdTaskAndUsuario")
+    public ResponseEntity<String> buscarVotoPorIdTaskAndUsuario(@RequestParam Long idTask, @RequestParam Long idUsuario){
+        VotacaoDTO votacaoDTO = service.buscarVotoPorIdTaskAndUsuario(idTask, idUsuario);
+
+        return ResponseEntity.ok().body(votacaoDTO.getValorVoto());
+
+    }
+
 
 }

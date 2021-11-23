@@ -33,4 +33,7 @@ public class Task {
 
     @Column(name="finalizado")
     private Boolean finalizado;
+
+    @Column(name="valor_final")
+    private String valorFinal;
 }

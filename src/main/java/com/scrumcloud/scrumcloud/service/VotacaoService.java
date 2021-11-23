@@ -34,7 +34,7 @@ public class VotacaoService {
         Task task = taskService.findById(objRef.getIdTask());
         Usuario user = usuarioService.buscarPorId(objRef.getIdUsuario());
 
-        VotacaoDTO votacaoDTO = repository.buscarVotoPorIdTaskAndUsuario(objRef.getIdTask(), objRef.getIdUsuario());
+        VotacaoDTO votacaoDTO = buscarVotoPorIdTaskAndUsuario(objRef.getIdTask(), objRef.getIdUsuario());
 
         if(votacaoDTO == null) {
             Votacao votacao = new Votacao();
@@ -95,6 +95,11 @@ public class VotacaoService {
         Integer numVotos = listAux.size();
 
         return numVotos;
+    }
+
+    public VotacaoDTO buscarVotoPorIdTaskAndUsuario(Long idTask, Long idUsuario) {
+        VotacaoDTO voto =  repository.buscarVotoPorIdTaskAndUsuario(idTask, idUsuario);
+        return voto;
     }
 
     public Integer calcularMediaVotosNumericos(List<Integer> listNum) {

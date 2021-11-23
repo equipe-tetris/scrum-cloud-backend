@@ -24,4 +24,12 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     @Query("SELECT task.finalizado FROM Task task WHERE task.id = :idTask")
     Boolean getStatusTaskPorId(Long idTask);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Task task set task.valorFinal = :valorFinal WHERE task.id = :idTask")
+    void setValorFinalPorIdTask(String valorFinal, Long idTask);
+
+    @Query("SELECT task.valorFinal from Task task WHERE task.id = :idTask")
+    String getValorFinalTaskPorId(Long idTask);
 }

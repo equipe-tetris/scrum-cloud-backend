@@ -56,4 +56,12 @@ public class TaskService {
         Boolean status = repository.getStatusTaskPorId(idTask);
         return status;
     }
+
+    public void setValorFinalPorIdTask(Long idTask, String valorFinal) {
+        repository.setValorFinalPorIdTask(valorFinal, idTask);
+    }
+
+    public String getValorFinalTaskPorId(Long idTask) {
+        return repository.getValorFinalTaskPorId(idTask);
+    }
 }

@@ -53,4 +53,29 @@ public class TaskResource {
 
         return ResponseEntity.ok().body(status);
     }
+
+    @PostMapping("/setValorFinalPorIdTask")
+    public ResponseEntity setValorFinalPorIdTask(@RequestParam Long idTask, @RequestParam String valorTask) {
+        try {
+            service.setValorFinalPorIdTask(idTask, valorTask);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ResponseEntity.ok(201);
+    }
+
+    @GetMapping("/getValorFinalTaskPorId/{idTask]")
+    public ResponseEntity<String> getValorFinalTaskPorId(@PathVariable Long idTask) {
+        String valorFinal = null;
+
+        try {
+            valorFinal = service.getValorFinalTaskPorId(idTask);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ResponseEntity.ok().body(valorFinal);
+    }
+
 }
