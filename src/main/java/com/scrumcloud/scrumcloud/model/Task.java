@@ -31,8 +31,8 @@ public class Task {
     @Column(name="data_criacao")
     private LocalDate dataCriacao;
 
-    @Column(name="finalizado")
-    private Boolean finalizado;
+    @Column(name="status")
+    private String status;
 
     @Column(name="valor_final")
     private String valorFinal;

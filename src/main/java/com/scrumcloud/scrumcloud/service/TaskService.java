@@ -43,7 +43,14 @@ public class TaskService {
         return list;
     }
 
-    public void mudarStatusTaskPorId(Boolean statusTask, Long idTask) {
+    public TaskDTO buscarTaskAtualParaVotacaoPorIdSala(Long idSala) {
+        TaskDTO task = repository.buscarTaskAtualParaVotacaoPorIdSala(idSala);
+
+        return task;
+    }
+
+    public void mudarStatusTaskPorId(String statusTask, Long idTask) {
+        repository.changeAllStatusTask();
         repository.mudarStatusTask(statusTask, idTask);
     }
 
@@ -52,8 +59,8 @@ public class TaskService {
         return task.orElseThrow(() -> new ObjectNotFoundException("Task não encontrada!"));
     }
 
-    public Boolean getStatusTaskPorId(Long idTask) {
-        Boolean status = repository.getStatusTaskPorId(idTask);
+    public String getStatusTaskPorId(Long idTask) {
+        String status = repository.getStatusTaskPorId(idTask);
         return status;
     }
 
@@ -62,6 +69,7 @@ public class TaskService {
     }
 
     public String getValorFinalTaskPorId(Long idTask) {
-        return repository.getValorFinalTaskPorId(idTask);
+        String valorFinal = repository.getValorFinalTaskPorId(idTask);
+        return valorFinal;
     }
 }

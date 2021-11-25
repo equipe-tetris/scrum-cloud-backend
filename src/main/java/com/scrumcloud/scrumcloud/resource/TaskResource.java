@@ -1,6 +1,7 @@
 package com.scrumcloud.scrumcloud.resource;
 
 import com.scrumcloud.scrumcloud.dto.TaskDTO;
+import com.scrumcloud.scrumcloud.model.Task;
 import com.scrumcloud.scrumcloud.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,8 +31,15 @@ public class TaskResource {
         return ResponseEntity.ok(listTask);
     }
 
+    @GetMapping("/buscarTaskAtualParaVotacaoPorIdSala/{idSala}")
+    public ResponseEntity<TaskDTO> buscarTaskAtualParaVotacaoPorIdSala(@PathVariable Long idSala) {
+        TaskDTO taskAtual = service.buscarTaskAtualParaVotacaoPorIdSala(idSala);
+
+        return ResponseEntity.ok().body(taskAtual);
+    }
+
     @PostMapping("/mudarStatusTaskPorId")
-    public ResponseEntity mudarStatusTaksPorId(@RequestParam Boolean statusTask, @RequestParam Long idTask) {
+    public ResponseEntity mudarStatusTaksPorId(@RequestParam String statusTask, @RequestParam Long idTask) {
         try {
             service.mudarStatusTaskPorId(statusTask, idTask);
         } catch (Exception e) {
@@ -42,8 +50,8 @@ public class TaskResource {
     }
 
     @GetMapping("/getStatusTaskPorId/{idTask}")
-    public ResponseEntity<Boolean> getStatusTaskPorId(@PathVariable Long idTask) {
-        Boolean status = null;
+    public ResponseEntity<String> getStatusTaskPorId(@PathVariable Long idTask) {
+        String status = null;
 
         try {
             status = service.getStatusTaskPorId(idTask);
@@ -52,17 +60,6 @@ public class TaskResource {
         }
 
         return ResponseEntity.ok().body(status);
-    }
-
-    @PostMapping("/setValorFinalPorIdTask")
-    public ResponseEntity setValorFinalPorIdTask(@RequestParam Long idTask, @RequestParam String valorTask) {
-        try {
-            service.setValorFinalPorIdTask(idTask, valorTask);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-        return ResponseEntity.ok(201);
     }
 
     @GetMapping("/getValorFinalTaskPorId/{idTask]")
@@ -77,5 +74,18 @@ public class TaskResource {
 
         return ResponseEntity.ok().body(valorFinal);
     }
+
+    @PostMapping("/setValorFinalPorIdTask")
+    public ResponseEntity setValorFinalPorIdTask(@RequestParam Long idTask, @RequestParam String valorTask) {
+        try {
+            service.setValorFinalPorIdTask(idTask, valorTask);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ResponseEntity.ok(201);
+    }
+
+
 
 }

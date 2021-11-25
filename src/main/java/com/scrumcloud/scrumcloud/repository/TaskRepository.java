@@ -13,23 +13,32 @@ import java.util.List;
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
-    @Query("SELECT new com.scrumcloud.scrumcloud.dto.TaskDTO(task.id, task.conteudo, task.salaPlanning.id, task.dataCriacao, task.finalizado)" +
+    @Query("SELECT new com.scrumcloud.scrumcloud.dto.TaskDTO(task.id, task.conteudo, task.salaPlanning.id, task.dataCriacao, task.status)" +
             "FROM Task task WHERE task.salaPlanning.id = :idSala ")
     List<TaskDTO> buscarTasksPorIdSala(Long idSala);
 
+    @Query("SELECT new com.scrumcloud.scrumcloud.dto.TaskDTO(task.id, task.conteudo, task.salaPlanning.id, task.dataCriacao, task.status)" +
+            "FROM Task task WHERE task.status like 'ATUAL' AND task.salaPlanning.id = :idSala ")
+    TaskDTO buscarTaskAtualParaVotacaoPorIdSala(Long idSala);
+
     @Transactional
     @Modifying
-    @Query("UPDATE Task task set task.finalizado = :statusTask WHERE task.id = :idTask")
-    void mudarStatusTask(Boolean statusTask, Long idTask);
+    @Query("UPDATE Task task set task.status = :statusTask WHERE task.id = :idTask")
+    void mudarStatusTask(String statusTask, Long idTask);
 
-    @Query("SELECT task.finalizado FROM Task task WHERE task.id = :idTask")
-    Boolean getStatusTaskPorId(Long idTask);
+    @Transactional
+    @Modifying
+    @Query("UPDATE Task task set task.status = 'ABERTA' WHERE task.status like 'ATUAL' ")
+    void changeAllStatusTask();
+
+    @Query("SELECT task.status FROM Task task WHERE task.id = :idTask")
+    String getStatusTaskPorId(Long idTask);
 
     @Transactional
     @Modifying
     @Query("UPDATE Task task set task.valorFinal = :valorFinal WHERE task.id = :idTask")
     void setValorFinalPorIdTask(String valorFinal, Long idTask);
 
-    @Query("SELECT task.valorFinal from Task task WHERE task.id = :idTask")
+    @Query("SELECT task.valorFinal FROM Task task WHERE task.id = :idTask")
     String getValorFinalTaskPorId(Long idTask);
 }
