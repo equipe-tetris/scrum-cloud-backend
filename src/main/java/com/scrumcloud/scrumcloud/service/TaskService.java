@@ -49,9 +49,17 @@ public class TaskService {
         return task;
     }
 
-    public void mudarStatusTaskPorId(String statusTask, Long idTask) {
+    public void mudarStatusTaskPorId(String statusTask, Long idTask, Boolean permitir) {
+        Task task = findById(idTask);
+
         repository.changeAllStatusTask();
-        repository.mudarStatusTask(statusTask, idTask);
+
+        if(!task.getStatus().equalsIgnoreCase("FINALIZADO")) {
+            repository.mudarStatusTask(statusTask, idTask);
+        } else if(task.getStatus().equalsIgnoreCase("FINALIZADO") && permitir) {
+            repository.mudarStatusTask(statusTask, idTask);
+        }
+
     }
 
     public Task findById(Long id) {

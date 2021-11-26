@@ -39,9 +39,9 @@ public class TaskResource {
     }
 
     @PostMapping("/mudarStatusTaskPorId")
-    public ResponseEntity mudarStatusTaksPorId(@RequestParam String statusTask, @RequestParam Long idTask) {
+    public ResponseEntity mudarStatusTaksPorId(@RequestParam String statusTask, @RequestParam Long idTask, @RequestParam Boolean permitir) {
         try {
-            service.mudarStatusTaskPorId(statusTask, idTask);
+            service.mudarStatusTaskPorId(statusTask, idTask, permitir);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -62,19 +62,6 @@ public class TaskResource {
         return ResponseEntity.ok().body(status);
     }
 
-    @GetMapping("/getValorFinalTaskPorId/{idTask]")
-    public ResponseEntity<String> getValorFinalTaskPorId(@PathVariable Long idTask) {
-        String valorFinal = null;
-
-        try {
-            valorFinal = service.getValorFinalTaskPorId(idTask);
-        } catch(Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-        return ResponseEntity.ok().body(valorFinal);
-    }
-
     @PostMapping("/setValorFinalPorIdTask")
     public ResponseEntity setValorFinalPorIdTask(@RequestParam Long idTask, @RequestParam String valorTask) {
         try {
@@ -84,6 +71,19 @@ public class TaskResource {
         }
 
         return ResponseEntity.ok(201);
+    }
+    
+    @GetMapping("/buscarValorFinalPorIdTask/{idTask}")
+    public ResponseEntity<String> buscarValorFinalPorIdTask(@PathVariable Long idTask) {
+        String valorFinal = null;
+
+        try {
+            valorFinal = service.getValorFinalTaskPorId(idTask);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ResponseEntity.ok().body(valorFinal);
     }
 
 
