@@ -73,6 +73,7 @@ Equipes de Desenvolvimento praticantes de metodologias ágeis que utilizam cerim
 - [Sprint planning](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/images/SprintReleasePlan.PNG)
 - [Portifólio - ITIL](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/documentacao/ITIL%20portifolio%20scrum%20clound.pdf)
 - [BSC](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/documentacao/BSC_Scrumcloud-novo.pdf)
+- [Help-Desk](https://newaccount1637966996475.freshdesk.com/support/tickets/new)
 
 <!--
 - [Relatório de Gestão de Serviços](incluir o link aqui)
