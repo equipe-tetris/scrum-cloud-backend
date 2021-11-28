@@ -80,4 +80,9 @@ public class TaskService {
         String valorFinal = repository.getValorFinalTaskPorId(idTask);
         return valorFinal;
     }
+
+    public void deletarPorId(Long idTask) {
+        Task task = findById(idTask);
+        repository.delete(task);
+    }
 }

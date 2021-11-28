@@ -20,14 +20,12 @@ public class TaskResource {
     @PostMapping("/inserir/{idSala}")
     public ResponseEntity inserirTasks(@RequestBody TaskDTO taskDTO, @PathVariable Long idSala) {
         List<String> list = service.inserirTasks(taskDTO.getListTask(), idSala);
-
         return ResponseEntity.ok(201);
     }
 
     @GetMapping("/buscarTasksPorIdSala/{idSala}")
     public ResponseEntity<List<TaskDTO>> buscarTasksPorIdSala(@PathVariable Long idSala) {
         List<TaskDTO> listTask = service.buscarTasksPorIdSala(idSala);
-
         return ResponseEntity.ok(listTask);
     }
 
@@ -86,6 +84,16 @@ public class TaskResource {
         return ResponseEntity.ok().body(valorFinal);
     }
 
+    @DeleteMapping("/deletarPorId/{idTask}")
+    public ResponseEntity deletarPorId(@PathVariable Long idTask) {
+        try {
+            service.deletarPorId(idTask);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ResponseEntity.ok(200);
+    }
 
 
 }

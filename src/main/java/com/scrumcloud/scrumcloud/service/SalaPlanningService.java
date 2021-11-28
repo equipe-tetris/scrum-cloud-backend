@@ -1,5 +1,6 @@
 package com.scrumcloud.scrumcloud.service;
 
+import com.scrumcloud.scrumcloud.dto.ItemComboDTO;
 import com.scrumcloud.scrumcloud.dto.SalaPlanningDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.Equipe;
@@ -47,6 +48,10 @@ public class SalaPlanningService {
         return repository.buscarSalasPorIdUsuario(idUser);
     }
 
+    public List<SalaPlanningDTO> buscarSalasPorIdIntegrante(Long idUser) {
+        return repository.buscarSalasPorIdIntegrante(idUser);
+    }
+
     public SalaPlanningDTO buscarSalaPorId(Long id) {
         return repository.buscarSalaPorId(id);
     }
@@ -58,6 +63,10 @@ public class SalaPlanningService {
 
     public List<UsuarioDTO> buscarIntegrantesEquipePorIdSala(Long idSala) {
         return repository.buscarIntegrantesEquipePorIdSala(idSala);
+    }
+
+    public List<ItemComboDTO> buscarComboIntegrantesSala(Long idSala) {
+        return repository.buscarComboIntegrantesSala(idSala);
     }
 
 
