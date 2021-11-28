@@ -29,7 +29,7 @@
 
 <!--
 ### :bar_chart: Apresentação: 
-- SPRINT-2 .:: [Clique aqui](<link>) ::.
+- SPRINT-3 .:: [Clique aqui](<link>) ::.
 <br>
 
 ### :chart_with_upwards_trend: Retrospectiva:
