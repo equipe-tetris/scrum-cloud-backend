@@ -4,7 +4,7 @@
 - Gerar link de reuniões marcadas para ser compartilhado  :heavy_check_mark:
 - Permitir definir Scrum Master da reunião :hourglass:
 - Evidenciar na tela item em votação :heavy_check_mark:
-- Permitir conversa entre participantes :heavy_check_mark:
+- Permitir conversa entre participantes :hourglass:
 - Permitir retornar ou avançar item da lista de votação :heavy_check_mark:
 - Permitir visualização de votos após encerramento de votação do item :hourglass:
 - Permitir incluir itens para votação em reuniões de Retrospective :hourglass:
