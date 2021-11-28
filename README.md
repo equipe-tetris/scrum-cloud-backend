@@ -27,11 +27,11 @@
 
 <br>
 
-<!--
-### :bar_chart: Apresentação: 
-- SPRINT-3 .:: [Clique aqui](<link>) ::.
-<br>
 
+### :bar_chart: Apresentação: 
+- SPRINT-3 .:: [Clique aqui](https://github.com/equipe-tetris/scrum-cloud-backend/blob/master/resource/apresentacoes/SPRINT-3.pdf) ::.
+<br>
+<!--
 ### :chart_with_upwards_trend: Retrospectiva:
 ![Retrospectiva](<link> "Retrospectiva-3") 
 -->
