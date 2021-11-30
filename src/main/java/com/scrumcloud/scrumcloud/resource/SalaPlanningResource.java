@@ -95,4 +95,15 @@ public class SalaPlanningResource {
         List<ItemComboDTO> list = service.buscarComboIntegrantesSala(idSala);
         return ResponseEntity.ok(list);
     }
+
+    @PostMapping("/change-sm")
+    public ResponseEntity changeSM(@RequestParam Long idUsuario, @RequestParam Long idSala) {
+        try {
+            service.changeSM(idUsuario, idSala);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        //changeSM changeSM = service.changeSM(idUsuario);
+        return ResponseEntity.ok(200);
+    }
 }

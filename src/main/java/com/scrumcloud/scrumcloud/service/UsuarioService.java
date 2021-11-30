@@ -55,4 +55,8 @@ public class UsuarioService {
         Optional<Usuario> usuario = repository.findById(id);
         return usuario.orElseThrow(() -> new ObjectNotFoundException("Usuário não encontrado!"));
     }
+
+    public void changeUserToSM(Long idUser) {
+        repository.changeUserToSM(idUser);
+    }
 }

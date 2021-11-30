@@ -20,7 +20,7 @@ public class Alerta {
     @Column(name="id", nullable = false)
     private Long id;
 
-    @Column(name="mensagem", nullable = false)
+    @Column(name="mensagem_alerta", nullable = false)
     private String mensagem;
 
     @ManyToOne(fetch= FetchType.LAZY)

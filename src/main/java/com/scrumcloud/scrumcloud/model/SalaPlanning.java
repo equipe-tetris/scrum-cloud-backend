@@ -38,4 +38,8 @@ public class SalaPlanning {
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="equipe")
     private Equipe equipe;
+
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name="sm_provisorio")
+    private Usuario smProvisorio;
 }

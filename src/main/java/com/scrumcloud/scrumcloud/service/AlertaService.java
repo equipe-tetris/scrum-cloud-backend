@@ -8,6 +8,8 @@ import com.scrumcloud.scrumcloud.repository.AlertaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AlertaService {
 
@@ -20,16 +22,13 @@ public class AlertaService {
     @Autowired
     AlertaRepository repository;
 
-    public void inserirAlerta(AlertaDTO dto) {
-        SalaPlanning sala = salaPlanningService.findById(dto.getIdSala());
-        Usuario usuario = usuarioService.buscarPorId(dto.getIdUsuario());
+    public void inserirAlerta(Alerta alerta) { repository.save(alerta); }
 
-        Alerta alerta = new Alerta();
+    public AlertaDTO buscarAlertasPorIdSalaAndIdUser(Long idSala, Long idUser) {
+        return repository.buscarAlertasPorIdSalaAndIdUser(idSala, idUser);
+    }
 
-        alerta.setMensagem(dto.getMensagem());
-        alerta.setSalaPlanning(sala);
-        alerta.setUsuario(usuario);
-
-        repository.save(alerta);
+    public void deleteAlertaPorIdSala(Long idSala){
+        repository.deleteAlertaPorIdSala(idSala);
     }
 }
