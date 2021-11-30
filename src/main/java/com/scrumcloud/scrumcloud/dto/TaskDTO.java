@@ -22,15 +22,15 @@ public class TaskDTO {
 
     private List<String> listTask;
 
-    private Boolean finalizado;
+    private String status;
 
 
 
-    public TaskDTO(Long id, String conteudo, Long idSala, LocalDate dataCriacao, Boolean finalizado){
+    public TaskDTO(Long id, String conteudo, Long idSala, LocalDate dataCriacao, String status){
         this.id = id;
         this.conteudo = conteudo;
         this.idSala = idSala;
         this.dataCriacao = dataCriacao;
-        this.finalizado = finalizado;
+        this.status = status;
     }
 }

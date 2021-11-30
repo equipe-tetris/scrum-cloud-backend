@@ -1,7 +1,10 @@
 package com.scrumcloud.scrumcloud.service;
 
+import com.scrumcloud.scrumcloud.dto.AlertaDTO;
+import com.scrumcloud.scrumcloud.dto.ItemComboDTO;
 import com.scrumcloud.scrumcloud.dto.SalaPlanningDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
+import com.scrumcloud.scrumcloud.model.Alerta;
 import com.scrumcloud.scrumcloud.model.Equipe;
 import com.scrumcloud.scrumcloud.model.SalaPlanning;
 import com.scrumcloud.scrumcloud.model.Usuario;
@@ -26,6 +29,8 @@ public class SalaPlanningService {
     @Autowired
     private SalaPlanningRepository repository;
 
+    @Autowired
+    AlertaService alertaService;
 
     public SalaPlanning cadastrar(SalaPlanningDTO objRel) {
 
@@ -47,6 +52,10 @@ public class SalaPlanningService {
         return repository.buscarSalasPorIdUsuario(idUser);
     }
 
+    public List<SalaPlanningDTO> buscarSalasPorIdIntegrante(Long idUser) {
+        return repository.buscarSalasPorIdIntegrante(idUser);
+    }
+
     public SalaPlanningDTO buscarSalaPorId(Long id) {
         return repository.buscarSalaPorId(id);
     }
@@ -60,5 +69,38 @@ public class SalaPlanningService {
         return repository.buscarIntegrantesEquipePorIdSala(idSala);
     }
 
+    public List<ItemComboDTO> buscarComboIntegrantesSala(Long idSala) {
+        return repository.buscarComboIntegrantesSala(idSala);
+    }
 
+    public void changeSM (Long idUsuario, Long idSala) {
+
+        SalaPlanning salaPlanning = findById(idSala);
+
+        if(idUsuario != 0) {
+            alertaService.deleteAlertaPorIdSala(salaPlanning.getId());
+
+            Usuario usuario = usuarioService.buscarPorId(idUsuario);
+
+            salaPlanning.setSmProvisorio(usuario);
+            repository.save(salaPlanning);
+
+            Alerta alerta = new Alerta();
+
+            alerta.setMensagem("Você possui permissão de Scrum Master nesta sala.");
+            alerta.setSalaPlanning(salaPlanning);
+            alerta.setUsuario(usuario);
+
+            alertaService.inserirAlerta(alerta);
+            usuarioService.changeUserToSM(usuario.getId());
+        } else {
+            salaPlanning.setSmProvisorio(null);
+            repository.save(salaPlanning);
+            alertaService.deleteAlertaPorIdSala(salaPlanning.getId());
+
+            }
+        }
 }
+
+
+

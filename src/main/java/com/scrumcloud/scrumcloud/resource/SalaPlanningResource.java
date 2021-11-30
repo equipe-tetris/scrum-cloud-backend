@@ -1,17 +1,28 @@
 package com.scrumcloud.scrumcloud.resource;
 
+import com.google.common.io.ByteSource;
 import com.scrumcloud.scrumcloud.dto.EquipeDTO;
+import com.scrumcloud.scrumcloud.dto.ItemComboDTO;
 import com.scrumcloud.scrumcloud.dto.SalaPlanningDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.SalaPlanning;
 import com.scrumcloud.scrumcloud.model.Usuario;
+import com.scrumcloud.scrumcloud.service.RelatorioService;
 import com.scrumcloud.scrumcloud.service.SalaPlanningService;
 import com.scrumcloud.scrumcloud.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.List;
 
 @CrossOrigin
@@ -25,6 +36,9 @@ public class SalaPlanningResource {
     @Autowired
     TaskService taskService;
 
+    @Autowired
+    RelatorioService relatorioService;
+
     @PostMapping("/cadastrar")
     public ResponseEntity<SalaPlanning> cadastroPlanning(@RequestBody SalaPlanningDTO salaPlanning) {
        SalaPlanning sala = service.cadastrar(salaPlanning);
@@ -35,6 +49,13 @@ public class SalaPlanningResource {
     @GetMapping("/buscarSalasPorIdUsuario/{idUser}")
     public ResponseEntity<List<SalaPlanningDTO>> buscarSalasPorIdUsuario(@PathVariable Long idUser) {
         List<SalaPlanningDTO> list = service.buscarSalasPorIdUsuario(idUser);
+
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/buscarSalasPorIdIntegrante/{idUser}")
+    public ResponseEntity<List<SalaPlanningDTO>> buscarSalasPorIdIntegrante(@PathVariable Long idUser) {
+        List<SalaPlanningDTO> list = service.buscarSalasPorIdIntegrante(idUser);
 
         return ResponseEntity.ok(list);
     }
@@ -51,5 +72,38 @@ public class SalaPlanningResource {
         List<UsuarioDTO> list = service.buscarIntegrantesEquipePorIdSala(idSala);
 
         return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/gerarRelatorioDaSala/{idSala}")
+    public ResponseEntity<Resource> gerarRelatorioDaSala(@PathVariable Long idSala) throws IOException {
+
+        File file = relatorioService.gerarArquivoXlsx(idSala);
+        byte[] fileContent = Files.readAllBytes(file.toPath());
+        file.delete();
+
+        InputStream targetStream = ByteSource.wrap(fileContent).openStream();
+        InputStreamResource resource = new InputStreamResource(targetStream);
+
+        return 	ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .header(HttpHeaders.CONTENT_DISPOSITION , "attachment; filename=\"relatorio-sala-planning.xlsx\"")
+                .body(resource);
+    }
+
+    @GetMapping("/buscarComboIntegrantesSala/{idSala}")
+    public ResponseEntity<List<ItemComboDTO>> buscarComboIntegrantesSala(@PathVariable Long idSala){
+        List<ItemComboDTO> list = service.buscarComboIntegrantesSala(idSala);
+        return ResponseEntity.ok(list);
+    }
+
+    @PostMapping("/change-sm")
+    public ResponseEntity changeSM(@RequestParam Long idUsuario, @RequestParam Long idSala) {
+        try {
+            service.changeSM(idUsuario, idSala);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        //changeSM changeSM = service.changeSM(idUsuario);
+        return ResponseEntity.ok(200);
     }
 }

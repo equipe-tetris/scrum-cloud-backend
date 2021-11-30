@@ -30,24 +30,23 @@ public class VotacaoService {
     @Autowired
     VotacaoRepository repository;
 
-    public String statusTask(Long idTask) {
-
-        String status = "ola";
-
-
-        return status;
-    }
-
-    public Votacao inserirVoto(VotacaoDTO objRef) {
+    public void inserirVoto(VotacaoDTO objRef) {
         Task task = taskService.findById(objRef.getIdTask());
         Usuario user = usuarioService.buscarPorId(objRef.getIdUsuario());
 
-        Votacao votacao = new Votacao();
-        votacao.setTask(task);
-        votacao.setUsuario(user);
-        votacao.setValorVoto(objRef.getValorVoto());
+        VotacaoDTO votacaoDTO = buscarVotoPorIdTaskAndUsuario(objRef.getIdTask(), objRef.getIdUsuario());
 
-        return repository.save(votacao);
+        if(votacaoDTO == null) {
+            Votacao votacao = new Votacao();
+
+            votacao.setTask(task);
+            votacao.setUsuario(user);
+            votacao.setValorVoto(objRef.getValorVoto());
+
+            repository.save(votacao);
+        } else {
+            repository.updateValorVoto(objRef.getValorVoto(),objRef.getIdTask(), objRef.getIdUsuario());
+        }
     }
 
     public List<AtualizacaoVotoDTO> atualizacaoVotoPorIdTask(Long idTask) {
@@ -61,7 +60,7 @@ public class VotacaoService {
         return list;
     }
 
-    public ResultadoVotosDTO buscarVotosPorIdTask(Long idTask) {
+    public ResultadoVotosDTO buscarInfoVotosPorIdTask(Long idTask) {
 
         ResultadoVotosDTO result = new ResultadoVotosDTO();
 
@@ -80,6 +79,7 @@ public class VotacaoService {
             }
         });
 
+        result.setNumVotos(listAux.size());
         result.setVotosNumber(listNumAux);
         result.setVotosString(listStrAux);
         result.setMediaVotosNumericos(calcularMediaVotosNumericos(listNumAux));
@@ -87,6 +87,19 @@ public class VotacaoService {
         result.setIdTask(idTask);
 
         return result;
+    }
+
+    public Integer buscarNumVotosPorIdTask(Long idTask) {
+
+        List<String> listAux = repository.buscarVotosPorIdTask(idTask);
+        Integer numVotos = listAux.size();
+
+        return numVotos;
+    }
+
+    public VotacaoDTO buscarVotoPorIdTaskAndUsuario(Long idTask, Long idUsuario) {
+        VotacaoDTO voto =  repository.buscarVotoPorIdTaskAndUsuario(idTask, idUsuario);
+        return voto;
     }
 
     public Integer calcularMediaVotosNumericos(List<Integer> listNum) {
@@ -120,4 +133,6 @@ public class VotacaoService {
         return maxValue;
 
     }
+
+
 }

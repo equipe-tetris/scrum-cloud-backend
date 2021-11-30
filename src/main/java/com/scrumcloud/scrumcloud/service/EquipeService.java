@@ -42,6 +42,10 @@ public class EquipeService {
         return equipeRepository.buscarPorIdUsuario(id);
     }
 
+    public List<EquipeDTO> buscarPorIdIntegrante(Long id){
+        return equipeRepository.buscarPorIdIntegrante(id);
+    }
+
     public List<UsuarioDTO> buscarIntegrantesEquipe(Long idEquipe) {
         return equipeRepository.buscarIntegrantesEquipe(idEquipe);
     }

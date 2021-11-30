@@ -33,6 +33,12 @@ public class EquipeResource {
         return ResponseEntity.ok(list);
     }
 
+    @GetMapping("/buscarPorIdIntegrante/{idUser}")
+    public ResponseEntity<List<EquipeDTO>> buscarPorIdIntegrante(@PathVariable Long idUser) {
+        List<EquipeDTO> list = equipeService.buscarPorIdIntegrante(idUser);
+        return ResponseEntity.ok(list);
+    }
+
     @GetMapping("/buscarIntegrantesEquipe/{idEquipe}")
     public ResponseEntity<List<UsuarioDTO>> buscarIntegrantesEquipe(@PathVariable Long idEquipe) {
         List<UsuarioDTO> listUser = equipeService.buscarIntegrantesEquipe(idEquipe);

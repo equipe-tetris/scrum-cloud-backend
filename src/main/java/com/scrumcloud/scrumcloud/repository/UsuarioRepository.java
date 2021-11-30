@@ -1,10 +1,15 @@
 package com.scrumcloud.scrumcloud.repository;
 
+import com.scrumcloud.scrumcloud.dto.ItemComboDTO;
 import com.scrumcloud.scrumcloud.dto.UsuarioDTO;
 import com.scrumcloud.scrumcloud.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @Repository
@@ -18,4 +23,8 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
             "from Usuario user WHERE lower(user.email) like :email and user.senha like :senha")
     UsuarioDTO authentication(String email, String senha);
 
+    @Transactional
+    @Modifying
+    @Query("UPDATE Usuario u set u.tipoUsuario = 'SM' WHERE u.id = :idUser")
+    void changeUserToSM(Long idUser);
 }

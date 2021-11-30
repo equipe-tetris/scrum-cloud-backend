@@ -43,12 +43,46 @@ public class TaskService {
         return list;
     }
 
-    public void mudarStatusTaskPorId(Boolean statusTask, Long idTask) {
-        repository.mudarStatusTask(statusTask, idTask);
+    public TaskDTO buscarTaskAtualParaVotacaoPorIdSala(Long idSala) {
+        TaskDTO task = repository.buscarTaskAtualParaVotacaoPorIdSala(idSala);
+
+        return task;
+    }
+
+    public void mudarStatusTaskPorId(String statusTask, Long idTask, Boolean permitir) {
+        Task task = findById(idTask);
+
+        repository.changeAllStatusTask();
+
+        if(!task.getStatus().equalsIgnoreCase("FINALIZADO")) {
+            repository.mudarStatusTask(statusTask, idTask);
+        } else if(task.getStatus().equalsIgnoreCase("FINALIZADO") && permitir) {
+            repository.mudarStatusTask(statusTask, idTask);
+        }
+
     }
 
     public Task findById(Long id) {
         Optional<Task> task = repository.findById(id);
         return task.orElseThrow(() -> new ObjectNotFoundException("Task não encontrada!"));
+    }
+
+    public String getStatusTaskPorId(Long idTask) {
+        String status = repository.getStatusTaskPorId(idTask);
+        return status;
+    }
+
+    public void setValorFinalPorIdTask(Long idTask, String valorFinal) {
+        repository.setValorFinalPorIdTask(valorFinal, idTask);
+    }
+
+    public String getValorFinalTaskPorId(Long idTask) {
+        String valorFinal = repository.getValorFinalTaskPorId(idTask);
+        return valorFinal;
+    }
+
+    public void deletarPorId(Long idTask) {
+        Task task = findById(idTask);
+        repository.delete(task);
     }
 }
