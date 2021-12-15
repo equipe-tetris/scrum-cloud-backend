@@ -1,0 +1,78 @@
+--1A--
+
+
+//Primeira Classe
+
+public class Carta {
+
+private String nome;
+private String naipe;
+	
+public Carta(String nome, String naipe) {		
+	this.nome = nome;
+	this.naipe = naipe;
+}
+	
+public String getNome() {
+    return nome;
+}
+
+public String getNaipe() {
+    return naipe;
+}
+}
+
+//Segunda Classe
+
+public class Baralho {
+Carta[] cartas = new Carta[52];
+String[] naipes = {"Copas", "Espada", "Ouros", "Paus"};
+String[] nomes = {"As", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+String coringa;
+Random aleatorio = new Random();
+public Baralho() {
+    int cont = 0;
+    for (String naipe : naipes) {
+        for (String nome : nomes) {
+            Carta cartas = new Carta();
+            cartas.setNaipe(naipes);
+            cartas.setNome(nomes);
+            this.cartas[cont] = cartas;
+            this.embaralha(naipes);
+            cont++;
+        }
+    }
+    System.out.println(cartas);
+}
+public void embaralhar(String[] carta) {
+    aleatorio.naipes();
+}
+public void distribuirCarta() {
+    for (int i = 0; i < cartas.length; i++) {
+        if (cartas[0] == null) {
+            break;
+        }else {
+            System.out.println(cartas[0]);
+        }
+    }
+}
+public boolean hasCarta() {
+    boolean TouF = true;
+    for (int i = 0; i < cartas.length; i++) {
+        if (cartas[i] != null) {
+            TouF = false;
+        }else {
+            TouF = true;
+        }
+    }
+    return TouF;
+}
+public void imprimirBaralho() {
+    for (int i = 0; i < cartas.length; i++) {
+        System.out.println(cartas[i]);
+    }
+}
+
+______________________________________________________________________________________________
+
+--1B--
